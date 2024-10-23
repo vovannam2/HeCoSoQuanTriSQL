@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -17,7 +18,7 @@ namespace quanlylaptop
         {
             InitializeComponent();
         }
-        
+        MyConnect myconn = new MyConnect();
 
         private void Form_KhachHang_Load(object sender, EventArgs e)
         {
@@ -119,6 +120,38 @@ namespace quanlylaptop
             string SDT = txt_SDT.Text.Trim();
             string CCCD = txt_SoCCCD.Text.Trim();
 
+            try
+            {
+                myconn.openConnectionAdmin();
+                SqlCommand cmd = new SqlCommand("InsertNewKhachHang", myconn.getConnectionAdmin);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                // Thêm tham số vào thủ tục
+                cmd.Parameters.Add("@MaKH", SqlDbType.NChar).Value = MaKH;
+                cmd.Parameters.Add("@LoaiKH", SqlDbType.NChar).Value = LoaiKH;
+                cmd.Parameters.Add("@HoTenKH", SqlDbType.NChar).Value = TenKH;
+                cmd.Parameters.Add("@SOCCCD", SqlDbType.NChar).Value = CCCD;
+                cmd.Parameters.Add("@SDT", SqlDbType.NChar).Value = SDT;
+
+                // Thực thi thủ tục
+                cmd.ExecuteNonQuery();
+
+                // Nếu không xảy ra lỗi, thông báo thành công
+                MessageBox.Show("Thêm thành công!", "Add Customer", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Form_KhachHang_Load(sender, e);
+                tabControl1.SelectedIndex = 0;
+                
+            }
+            catch (SqlException ex) // Bắt lỗi SqlException
+            {
+                // Hiển thị thông báo lỗi từ trigger
+                MessageBox.Show($"Thêm thất bại: {ex.Message}", "Add Customer", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                myconn.closeConnectionAdmin(); // Đảm bảo kết nối được đóng trong mọi trường hợp
+            }
+            
 
         }
     }
