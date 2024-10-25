@@ -23,7 +23,7 @@ namespace quanlylaptop
         private void Form_KhachHang_Load(object sender, EventArgs e)
         {
             ClassDAL classDAL = new ClassDAL();
-            classDAL.loadData("select * from KhachHang", dgv_KhachHang);
+            classDAL.loadData("select * from view_KhachHang  ", dgv_KhachHang);
         }
 
         private void dgv_KhachHang_CellContentClick(object sender, DataGridViewCellEventArgs e)

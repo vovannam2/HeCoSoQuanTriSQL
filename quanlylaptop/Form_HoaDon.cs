@@ -21,15 +21,15 @@ namespace quanlylaptop
             InitializeComponent();
         }
         MyConnect myconn = new MyConnect();
-
+        ClassDAL classDAL = new ClassDAL();
         private void Form_HoaDon_Load(object sender, EventArgs e)
         {
-            ClassDAL classDAL = new ClassDAL();
+           
             classDAL.loadData("select * from v1_infThongTinHoaDon", dgv_HoaDon);
-            //foreach (DataGridViewColumn column in this.dgv_HoaDon.Columns)
-            //{
-            //    Console.WriteLine(column.Name);
-            //}
+            foreach (DataGridViewColumn column in this.dgv_HoaDon.Columns)
+            {
+                Console.WriteLine(column.Name);
+            }
         }
 
         private void dgv_HoaDon_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -51,7 +51,7 @@ namespace quanlylaptop
 
 
                 // Chuyển đổi kiểu dữ liệu cho các trường cần thiết
-                this.txt_SoTienDaThanhToan.Text = Convert.ToInt32(row.Cells["SoTienDaThanhToan"].Value).ToString();
+                this.txt_SoTienDaThanhToan.Text = Convert.ToInt32(row.Cells["SoTienThanhToan"].Value).ToString();
 
 
                 // Chuyển sang tab Options

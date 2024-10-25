@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace quanlylaptop.DAL
 {
-    internal class ClassDAL
+    public class ClassDAL
     {
         MyConnect myconn = new MyConnect();
         //Read Items to Table

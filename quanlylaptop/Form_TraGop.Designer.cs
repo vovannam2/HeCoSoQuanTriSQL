@@ -27,7 +27,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btn_Add_TraGop = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txt_search_MHD = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btn_TimKiem_TraGop = new Guna.UI2.WinForms.Guna2Button();
@@ -49,12 +49,13 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.MaHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HoTenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LaiSuatHangThang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TienTraTruoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TienConLai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ThoiGianTraGop = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.thoiGianTraGop = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayBatDau = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayDaoHan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
@@ -78,7 +79,7 @@
             // 
             this.tabPage1.BackColor = System.Drawing.Color.White;
             this.tabPage1.Controls.Add(this.btn_Add_TraGop);
-            this.tabPage1.Controls.Add(this.guna2TextBox1);
+            this.tabPage1.Controls.Add(this.txt_search_MHD);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.btn_TimKiem_TraGop);
@@ -86,9 +87,10 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1264, 834);
+            this.tabPage1.Size = new System.Drawing.Size(1264, 831);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Information";
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // btn_Add_TraGop
             // 
@@ -108,25 +110,25 @@
             this.btn_Add_TraGop.TabIndex = 47;
             this.btn_Add_TraGop.Text = "+ Thêm trả góp";
             // 
-            // guna2TextBox1
+            // txt_search_MHD
             // 
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Location = new System.Drawing.Point(911, 90);
-            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderText = "";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.Size = new System.Drawing.Size(229, 38);
-            this.guna2TextBox1.TabIndex = 46;
+            this.txt_search_MHD.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_search_MHD.DefaultText = "";
+            this.txt_search_MHD.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txt_search_MHD.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txt_search_MHD.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_search_MHD.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_search_MHD.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_search_MHD.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txt_search_MHD.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_search_MHD.Location = new System.Drawing.Point(911, 90);
+            this.txt_search_MHD.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_search_MHD.Name = "txt_search_MHD";
+            this.txt_search_MHD.PasswordChar = '\0';
+            this.txt_search_MHD.PlaceholderText = "";
+            this.txt_search_MHD.SelectedText = "";
+            this.txt_search_MHD.Size = new System.Drawing.Size(229, 38);
+            this.txt_search_MHD.TabIndex = 46;
             // 
             // label1
             // 
@@ -134,7 +136,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(908, 68);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(125, 15);
+            this.label1.Size = new System.Drawing.Size(146, 18);
             this.label1.TabIndex = 45;
             this.label1.Text = "Nhập mã hóa đơn:";
             // 
@@ -145,7 +147,7 @@
             this.label4.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.label4.Location = new System.Drawing.Point(490, 3);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(196, 30);
+            this.label4.Size = new System.Drawing.Size(249, 38);
             this.label4.TabIndex = 40;
             this.label4.Text = "Thông tin trả góp";
             // 
@@ -166,6 +168,7 @@
             this.btn_TimKiem_TraGop.Size = new System.Drawing.Size(87, 49);
             this.btn_TimKiem_TraGop.TabIndex = 20;
             this.btn_TimKiem_TraGop.Text = "Tìm";
+            this.btn_TimKiem_TraGop.Click += new System.EventHandler(this.btn_TimKiem_TraGop_Click);
             // 
             // dgv_TraGop
             // 
@@ -193,7 +196,7 @@
             this.LaiSuatHangThang,
             this.TienTraTruoc,
             this.TienConLai,
-            this.ThoiGianTraGop,
+            this.thoiGianTraGop,
             this.NgayBatDau,
             this.NgayDaoHan});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -242,6 +245,7 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.White;
+            this.tabPage2.Controls.Add(this.label3);
             this.tabPage2.Controls.Add(this.guna2DateTimePicker2);
             this.tabPage2.Controls.Add(this.guna2DateTimePicker1);
             this.tabPage2.Controls.Add(this.label19);
@@ -261,9 +265,10 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1264, 834);
+            this.tabPage2.Size = new System.Drawing.Size(1264, 831);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Options";
+            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
             // guna2DateTimePicker2
             // 
@@ -300,7 +305,7 @@
             this.label19.ForeColor = System.Drawing.SystemColors.Highlight;
             this.label19.Location = new System.Drawing.Point(574, 49);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(203, 25);
+            this.label19.Size = new System.Drawing.Size(256, 32);
             this.label19.TabIndex = 27;
             this.label19.Text = "TÙY CHỈNH TRẢ GÓP";
             // 
@@ -318,6 +323,7 @@
             this.btn_Sua_TraGop.Size = new System.Drawing.Size(180, 45);
             this.btn_Sua_TraGop.TabIndex = 26;
             this.btn_Sua_TraGop.Text = "Sửa";
+            this.btn_Sua_TraGop.Click += new System.EventHandler(this.btn_Sua_TraGop_Click);
             // 
             // btn_Xoa_TraGop
             // 
@@ -333,6 +339,7 @@
             this.btn_Xoa_TraGop.Size = new System.Drawing.Size(180, 45);
             this.btn_Xoa_TraGop.TabIndex = 26;
             this.btn_Xoa_TraGop.Text = "Xóa";
+            this.btn_Xoa_TraGop.Click += new System.EventHandler(this.btn_Xoa_TraGop_Click);
             // 
             // btn_Them_TraGop
             // 
@@ -348,6 +355,7 @@
             this.btn_Them_TraGop.Size = new System.Drawing.Size(180, 45);
             this.btn_Them_TraGop.TabIndex = 26;
             this.btn_Them_TraGop.Text = "Thêm";
+            this.btn_Them_TraGop.Click += new System.EventHandler(this.btn_Them_TraGop_Click);
             // 
             // txt_TienConLai
             // 
@@ -415,7 +423,7 @@
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic);
             this.label2.Location = new System.Drawing.Point(212, 399);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(110, 21);
+            this.label2.Size = new System.Drawing.Size(137, 28);
             this.label2.TabIndex = 4;
             this.label2.Text = "Ngày đáo hạn";
             // 
@@ -445,7 +453,7 @@
             this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic);
             this.label10.Location = new System.Drawing.Point(212, 349);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(106, 21);
+            this.label10.Size = new System.Drawing.Size(132, 28);
             this.label10.TabIndex = 4;
             this.label10.Text = "Ngày bắt đầu";
             // 
@@ -455,7 +463,7 @@
             this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic);
             this.label9.Location = new System.Drawing.Point(212, 299);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(89, 21);
+            this.label9.Size = new System.Drawing.Size(113, 28);
             this.label9.TabIndex = 3;
             this.label9.Text = "Tiền còn lại";
             // 
@@ -465,7 +473,7 @@
             this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic);
             this.label8.Location = new System.Drawing.Point(212, 249);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(103, 21);
+            this.label8.Size = new System.Drawing.Size(130, 28);
             this.label8.TabIndex = 2;
             this.label8.Text = "Tiền trả trước";
             // 
@@ -475,7 +483,7 @@
             this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic);
             this.label7.Location = new System.Drawing.Point(211, 199);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(148, 21);
+            this.label7.Size = new System.Drawing.Size(185, 28);
             this.label7.TabIndex = 1;
             this.label7.Text = "Lãi suất hàng tháng";
             // 
@@ -485,9 +493,19 @@
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic);
             this.label6.Location = new System.Drawing.Point(212, 149);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(94, 21);
+            this.label6.Size = new System.Drawing.Size(117, 28);
             this.label6.TabIndex = 0;
             this.label6.Text = "Mã hóa đơn";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic);
+            this.label3.Location = new System.Drawing.Point(576, 401);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(113, 28);
+            this.label3.TabIndex = 29;
+            this.label3.Text = "Tiền còn lại";
             // 
             // MaHD
             // 
@@ -498,6 +516,7 @@
             // HoTenKH
             // 
             this.HoTenKH.HeaderText = "Tên Khách hàng";
+            this.HoTenKH.MinimumWidth = 6;
             this.HoTenKH.Name = "HoTenKH";
             // 
             // LaiSuatHangThang
@@ -518,11 +537,11 @@
             this.TienConLai.MinimumWidth = 6;
             this.TienConLai.Name = "TienConLai";
             // 
-            // ThoiGianTraGop
+            // thoiGianTraGop
             // 
-            this.ThoiGianTraGop.HeaderText = "Thời gian trả góp(tháng)";
-            this.ThoiGianTraGop.MinimumWidth = 6;
-            this.ThoiGianTraGop.Name = "ThoiGianTraGop";
+            this.thoiGianTraGop.HeaderText = "Thời Gian Trả Góp (tháng)";
+            this.thoiGianTraGop.MinimumWidth = 6;
+            this.thoiGianTraGop.Name = "thoiGianTraGop";
             // 
             // NgayBatDau
             // 
@@ -575,18 +594,19 @@
         private Guna.UI2.WinForms.Guna2Button btn_Xoa_TraGop;
         private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2TextBox txt_TienTraTruoc;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private Guna.UI2.WinForms.Guna2TextBox txt_search_MHD;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2Button btn_Add_TraGop;
         private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
         private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker2;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaHD;
         private System.Windows.Forms.DataGridViewTextBoxColumn HoTenKH;
         private System.Windows.Forms.DataGridViewTextBoxColumn LaiSuatHangThang;
         private System.Windows.Forms.DataGridViewTextBoxColumn TienTraTruoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn TienConLai;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ThoiGianTraGop;
+        private System.Windows.Forms.DataGridViewTextBoxColumn thoiGianTraGop;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayBatDau;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayDaoHan;
     }

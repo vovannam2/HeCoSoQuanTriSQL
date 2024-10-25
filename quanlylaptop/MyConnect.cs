@@ -9,14 +9,7 @@ namespace quanlylaptop
 {
     class MyConnect
     {
-        SqlConnection con = new SqlConnection(@"Data Source=.;Initial Catalog=ShopLaptop; User Id=");
-        public SqlConnection getConnection
-        {
-            get
-            {
-                return con;
-            }
-        }
+        
         SqlConnection conAdmin = new SqlConnection(@"Data Source=LAPTOP-OQ5HTD48;Initial Catalog=QuanLyLapTop2;Integrated Security=True");
         public SqlConnection getConnectionAdmin
         {
@@ -26,14 +19,7 @@ namespace quanlylaptop
             }
         }
         // open the connection
-        public void openConnection()
-        {
-            if (con.State == ConnectionState.Closed)
-            {
-                con.Open();
-            }
-
-        }
+        
         public void openConnectionAdmin()
         {
             if (conAdmin.State == ConnectionState.Closed)
@@ -41,13 +27,7 @@ namespace quanlylaptop
                 conAdmin.Open();
             }
         }
-        public void closeConnection()
-        {
-            if (con.State == ConnectionState.Open)
-            {
-                con.Close();
-            }
-        }
+        
         public void closeConnectionAdmin()
         {
             if (conAdmin.State == ConnectionState.Open)

@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label4 = new System.Windows.Forms.Label();
@@ -90,7 +90,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1264, 834);
+            this.tabPage1.Size = new System.Drawing.Size(1264, 831);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Information";
             // 
@@ -101,7 +101,7 @@
             this.label4.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.label4.Location = new System.Drawing.Point(490, 3);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(179, 30);
+            this.label4.Size = new System.Drawing.Size(230, 38);
             this.label4.TabIndex = 40;
             this.label4.Text = "Chi tiết hóa đơn";
             // 
@@ -147,18 +147,18 @@
             this.dgv_ChiTietHD.AllowUserToDeleteRows = false;
             this.dgv_ChiTietHD.AllowUserToResizeColumns = false;
             this.dgv_ChiTietHD.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.dgv_ChiTietHD.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgv_ChiTietHD.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_ChiTietHD.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgv_ChiTietHD.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(81)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_ChiTietHD.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(81)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_ChiTietHD.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_ChiTietHD.ColumnHeadersHeight = 80;
             this.dgv_ChiTietHD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgv_ChiTietHD.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -169,14 +169,14 @@
             this.ThueVAT,
             this.KhuyenMai,
             this.ThanhTienSauThue});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_ChiTietHD.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_ChiTietHD.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_ChiTietHD.Location = new System.Drawing.Point(8, 189);
             this.dgv_ChiTietHD.Name = "dgv_ChiTietHD";
             this.dgv_ChiTietHD.RowHeadersVisible = false;
@@ -278,7 +278,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1264, 834);
+            this.tabPage2.Size = new System.Drawing.Size(1264, 831);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Options";
             // 
@@ -289,7 +289,7 @@
             this.label19.ForeColor = System.Drawing.SystemColors.Highlight;
             this.label19.Location = new System.Drawing.Point(507, 37);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(294, 25);
+            this.label19.Size = new System.Drawing.Size(372, 32);
             this.label19.TabIndex = 27;
             this.label19.Text = "TÙY CHỈNH CHI TIẾT HÓA ĐƠN";
             // 
@@ -337,6 +337,7 @@
             this.btn_Them_CTHD.Size = new System.Drawing.Size(180, 45);
             this.btn_Them_CTHD.TabIndex = 26;
             this.btn_Them_CTHD.Text = "Thêm";
+            this.btn_Them_CTHD.Click += new System.EventHandler(this.btn_Them_CTHD_Click);
             // 
             // txt_ThanhTienSauThue
             // 
@@ -464,7 +465,7 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic);
             this.label1.Location = new System.Drawing.Point(258, 438);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(147, 21);
+            this.label1.Size = new System.Drawing.Size(185, 28);
             this.label1.TabIndex = 5;
             this.label1.Text = "Thành tiền sau thuế";
             // 
@@ -494,7 +495,7 @@
             this.label11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic);
             this.label11.Location = new System.Drawing.Point(258, 388);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(94, 21);
+            this.label11.Size = new System.Drawing.Size(116, 28);
             this.label11.TabIndex = 5;
             this.label11.Text = "Khuyến mãi";
             // 
@@ -504,7 +505,7 @@
             this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic);
             this.label10.Location = new System.Drawing.Point(258, 338);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(76, 21);
+            this.label10.Size = new System.Drawing.Size(98, 28);
             this.label10.TabIndex = 4;
             this.label10.Text = "Thuế VAT";
             // 
@@ -514,7 +515,7 @@
             this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic);
             this.label9.Location = new System.Drawing.Point(258, 288);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(174, 21);
+            this.label9.Size = new System.Drawing.Size(219, 28);
             this.label9.TabIndex = 3;
             this.label9.Text = "Giá bán từng sản phẩm";
             // 
@@ -524,7 +525,7 @@
             this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic);
             this.label8.Location = new System.Drawing.Point(258, 238);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(144, 21);
+            this.label8.Size = new System.Drawing.Size(181, 28);
             this.label8.TabIndex = 2;
             this.label8.Text = "Số lượng sản phẩm";
             // 
@@ -534,7 +535,7 @@
             this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic);
             this.label7.Location = new System.Drawing.Point(258, 188);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(94, 21);
+            this.label7.Size = new System.Drawing.Size(117, 28);
             this.label7.TabIndex = 1;
             this.label7.Text = "Mã hóa đơn";
             // 
@@ -544,7 +545,7 @@
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic);
             this.label6.Location = new System.Drawing.Point(258, 138);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(81, 21);
+            this.label6.Size = new System.Drawing.Size(100, 28);
             this.label6.TabIndex = 0;
             this.label6.Text = "Mã laptop";
             // 

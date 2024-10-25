@@ -59,8 +59,8 @@
             this.MaHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayMuaHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoTienThanhToanHoaDon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PhuongThucThanhToan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoTienThanhToan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PTTT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_HoaDon)).BeginInit();
@@ -216,8 +216,8 @@
             this.MaHD,
             this.MaKH,
             this.NgayMuaHang,
-            this.SoTienThanhToanHoaDon,
-            this.PhuongThucThanhToan});
+            this.SoTienThanhToan,
+            this.PTTT});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
@@ -504,17 +504,17 @@
             this.NgayMuaHang.MinimumWidth = 6;
             this.NgayMuaHang.Name = "NgayMuaHang";
             // 
-            // SoTienThanhToanHoaDon
+            // SoTienThanhToan
             // 
-            this.SoTienThanhToanHoaDon.HeaderText = "Số tiền thanh toán";
-            this.SoTienThanhToanHoaDon.MinimumWidth = 6;
-            this.SoTienThanhToanHoaDon.Name = "SoTienThanhToanHoaDon";
+            this.SoTienThanhToan.HeaderText = "Số tiền thanh toán";
+            this.SoTienThanhToan.MinimumWidth = 6;
+            this.SoTienThanhToan.Name = "SoTienThanhToan";
             // 
-            // PhuongThucThanhToan
+            // PTTT
             // 
-            this.PhuongThucThanhToan.HeaderText = "Phương thức thanh toán";
-            this.PhuongThucThanhToan.MinimumWidth = 6;
-            this.PhuongThucThanhToan.Name = "PhuongThucThanhToan";
+            this.PTTT.HeaderText = "Phương thức thanh toán";
+            this.PTTT.MinimumWidth = 6;
+            this.PTTT.Name = "PTTT";
             // 
             // Form_HoaDon
             // 
@@ -564,7 +564,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MaHD;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaKH;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayMuaHang;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SoTienThanhToanHoaDon;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PhuongThucThanhToan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoTienThanhToan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PTTT;
     }
 }
