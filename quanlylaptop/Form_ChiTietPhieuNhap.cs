@@ -14,88 +14,164 @@ namespace quanlylaptop
 {
     public partial class Form_ChiTietPhieuNhap : Form
     {
-        public Form_ChiTietPhieuNhap()
+        public string maNK1;
+        public Form_ChiTietPhieuNhap(string maNK1)
         {
             InitializeComponent();
+            this.maNK1 = maNK1;
         }
-        MyConnect db = new MyConnect();
+        MyConnect myconn = new MyConnect(Properties.Settings.Default.IsAdmin);
         ClassDAL classDAL = new ClassDAL();
-        private void dgv_ChiTietPhieuNhapKho_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
+        
         private void Form_ChiTietPhieuNhap_Load(object sender, EventArgs e)
         {
             
-            classDAL.loadData("select * from ChiTietPhieuNhap", dgv_ChiTietPhieuNhapKho);
+            classDAL.loadData("SELECT * FROM ChiTietPhieuNhap WHERE MaNK = '" + maNK1 + "'", dgv_ChiTietPhieuNhapKho);
         }
 
-        private void btn_Them_CTPNK_Click(object sender, EventArgs e)
+        
+        private void btn_close_Click(object sender, EventArgs e)
         {
-            string maLT = txt_MaLT.Text;
-            string maNK = txt_MaNK.Text;
-            int soLuongSP;
-            int giaNhapTungSP;
-            int thueVAT;
-            int thanhTienTungSP;
+            this.Close(); // Đóng form hiện tại
+        }
 
-            // Kiểm tra dữ liệu đầu vào hợp lệ
-            if (string.IsNullOrWhiteSpace(maLT) || string.IsNullOrWhiteSpace(maNK) ||
-                !int.TryParse(txt_SLSP.Text, out soLuongSP) ||
-                !int.TryParse(txt_GiaNhapTungSP.Text, out giaNhapTungSP) ||
-                !int.TryParse(txt_ThueVAT.Text, out thueVAT) ||
-                !int.TryParse(txt_ThanhTienTungSP.Text, out thanhTienTungSP))
+        private void dgv_ChiTietPhieuNhapKho_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            // Kiểm tra xem người dùng có click vào hàng hợp lệ không
+            if (e.RowIndex >= 0)
             {
-                MessageBox.Show("Vui lòng nhập đầy đủ thông tin hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                DataGridViewRow row = this.dgv_ChiTietPhieuNhapKho.Rows[e.RowIndex];
+
+                // Gán giá trị vào các TextBox tương ứng, thực hiện chuyển đổi kiểu dữ liệu khi cần
+                this.txt_MaLT.Text = row.Cells["MaLT"].Value?.ToString() ?? "";
+                this.txt_MaNK.Text = row.Cells["MaNK"].Value?.ToString() ?? "";
+
+                // Chuyển đổi kiểu dữ liệu cho các trường số nguyên và số thập phân
+                this.txt_SLSP.Text = Convert.ToInt32(row.Cells["SoLuongSanPham"].Value ?? 0).ToString();
+                this.txt_GiaNhapTungSP.Text = Convert.ToDecimal(row.Cells["GiaNhapTungSP"].Value ?? 0).ToString("F0");
+                this.txt_ThueVAT.Text = Convert.ToDecimal(row.Cells["ThueVAT"].Value ?? 0).ToString("F0");
+                this.txt_ThanhTienTungSP.Text = Convert.ToDecimal(row.Cells["ThanhTienTungSanPham"].Value ?? 0).ToString("F0");
+
+                // Chuyển sang tab Options (nếu có)
+                this.tabControl1.SelectedTab = this.tabPage2;
+            }
+        }
+
+        private void btn_Sua_CTPNK_Click(object sender, EventArgs e)
+        {
+            // Lấy giá trị từ các TextBox và ComboBox
+            string MaLT = txt_MaLT.Text.Trim(); // Mã laptop
+            string MaNK = txt_MaNK.Text.Trim(); // Mã nhập kho
+            int SoLuongSP = int.Parse(txt_SLSP.Text.Trim()); // Số lượng sản phẩm
+            int GiaNhapTungSP = int.Parse(txt_GiaNhapTungSP.Text.Trim()); // Giá nhập từng sản phẩm
+            int ThueVAT = int.Parse(txt_ThueVAT.Text.Trim()); // Thuế VAT
+          
+
+            // Hiển thị hộp thoại xác nhận
+            DialogResult result = MessageBox.Show(
+                "Bạn có chắc chắn muốn sửa chi tiết phiếu nhập này không?",
+                "Xác nhận sửa Chi Tiết Phiếu Nhập",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            // Nếu người dùng chọn "No", dừng thực hiện
+            if (result == DialogResult.No)
+            {
                 return;
             }
 
-            // Gọi hàm thêm chi tiết phiếu nhập
-            AddChiTietPhieuNhap(maLT, maNK, soLuongSP, giaNhapTungSP, thueVAT, thanhTienTungSP);
-        }
-       
-
-        public bool AddChiTietPhieuNhap(string maLT, string maNK, int soLuongSP, int giaNhapTungSP, int thueVAT, int thanhTienTungSP)
-        {
+            SqlConnection con = myconn.getConnection;
+            myconn.openConnection(con);
             try
             {
-                db.openConnectionAdmin();
-                SqlCommand cmd = new SqlCommand("EXEC pro_ThemChiTietPhieuNhap @MaLT, @MaNK, @SoLuongSP, @GiaNhapTungSP, @ThueVAT, @ThanhTienTungSP", db.getConnectionAdmin);
-                
-                // Thêm các tham số cho stored procedure
-                cmd.Parameters.Add("@MaLT", SqlDbType.VarChar, 50).Value = maLT;
-                cmd.Parameters.Add("@MaNK", SqlDbType.VarChar, 50).Value = maNK;
-                cmd.Parameters.Add("@SoLuongSP", SqlDbType.Int).Value = soLuongSP;
-                cmd.Parameters.Add("@GiaNhapTungSP", SqlDbType.Int).Value = giaNhapTungSP;
-                cmd.Parameters.Add("@ThueVAT", SqlDbType.Int).Value = thueVAT;
-                cmd.Parameters.Add("@ThanhTienTungSP", SqlDbType.Int).Value = thanhTienTungSP;
+                // Khởi tạo SqlCommand và đặt thủ tục
+                SqlCommand cmd = new SqlCommand("pro_CapNhatChiTietPhieuNhap", con);
+                cmd.CommandType = CommandType.StoredProcedure;
 
-                // Mở kết nối
+                // Thêm các tham số cho thủ tục
+                cmd.Parameters.Add("@MaLT", SqlDbType.VarChar).Value = MaLT;
+                cmd.Parameters.Add("@MaNK", SqlDbType.VarChar).Value = MaNK;
+                cmd.Parameters.Add("@SoLuongSP", SqlDbType.Int).Value = SoLuongSP;
+                cmd.Parameters.Add("@GiaNhapTungSP", SqlDbType.Int).Value = GiaNhapTungSP;
+                cmd.Parameters.Add("@ThueVAT", SqlDbType.Int).Value = ThueVAT;
                
 
-                // Thực thi stored procedure
+                // Thực thi thủ tục
                 cmd.ExecuteNonQuery();
 
-                // Đóng kết nối
-          
-                classDAL.loadData("select * from ChiTietPhieuNhap", dgv_ChiTietPhieuNhapKho);
-                MessageBox.Show("Thêm chi tiết phiếu nhập thành công", "Thành công", MessageBoxButtons.OK);
-                tabControl1.SelectedTab = this.tabPage1;
+                // Thông báo thành công nếu không có lỗi
+                MessageBox.Show("Cập nhật thành công!", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                return true;
+                // Tải lại dữ liệu (nếu cần)
+                Form_ChiTietPhieuNhap_Load(sender, e); // Gọi lại phương thức load để cập nhật dữ liệu nếu cần
+                tabControl1.SelectedIndex = 0; // Chuyển về tab đầu tiên nếu cần
             }
-            catch (SqlException ex) // Bắt lỗi SQL
+            catch (SqlException ex) // Bắt lỗi SqlException nếu xảy ra
             {
-                MessageBox.Show("Lỗi khi thêm chi tiết phiếu nhập: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                db.closeConnectionAdmin();
-                return false;
+                // Hiển thị thông báo lỗi nếu có
+                MessageBox.Show($"cập nhật  thất bại: {ex.Message}", "Update", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            catch (Exception ex) // Bắt lỗi khác
+            finally
             {
-                MessageBox.Show("Lỗi khi thêm chi tiết phiếu nhập: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                db.closeConnectionAdmin();
-                return false;
+                myconn.closeConnection(con); // Đảm bảo kết nối được đóng trong mọi trường hợp
+            }
+        }
+
+        private void btn_Xoa_CTPNK_Click(object sender, EventArgs e)
+        {
+            // Lấy giá trị từ các TextBox và ComboBox
+            string MaLT = txt_MaLT.Text.Trim(); // Mã laptop
+            string MaNK = txt_MaNK.Text.Trim(); // Mã nhập kho
+           
+
+
+            // Hiển thị hộp thoại xác nhận
+            DialogResult result = MessageBox.Show(
+                "Bạn có chắc chắn muốn xóa chi tiết phiếu nhập này không?",
+                "Xác nhận xóa Chi Tiết Phiếu Nhập",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            // Nếu người dùng chọn "No", dừng thực hiện
+            if (result == DialogResult.No)
+            {
+                return;
+            }
+
+            SqlConnection con = myconn.getConnection;
+            myconn.openConnection(con);
+            try
+            {
+                // Khởi tạo SqlCommand và đặt thủ tục
+                SqlCommand cmd = new SqlCommand("pro_XoaChiTietPhieuNhap", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                // Thêm các tham số cho thủ tục
+                cmd.Parameters.Add("@MaLT", SqlDbType.VarChar).Value = MaLT;
+                cmd.Parameters.Add("@MaNK", SqlDbType.VarChar).Value = MaNK;
+               
+
+                // Thực thi thủ tục
+                cmd.ExecuteNonQuery();
+
+                // Thông báo thành công nếu không có lỗi
+                MessageBox.Show("Xóa thành công!", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Tải lại dữ liệu (nếu cần)
+                Form_ChiTietPhieuNhap_Load(sender, e); // Gọi lại phương thức load để cập nhật dữ liệu nếu cần
+                tabControl1.SelectedIndex = 0; // Chuyển về tab đầu tiên nếu cần
+            }
+            catch (SqlException ex) // Bắt lỗi SqlException nếu xảy ra
+            {
+                // Hiển thị thông báo lỗi nếu có
+                MessageBox.Show($"xóa  thất bại: {ex.Message}", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                myconn.closeConnection(con); // Đảm bảo kết nối được đóng trong mọi trường hợp
             }
         }
     }

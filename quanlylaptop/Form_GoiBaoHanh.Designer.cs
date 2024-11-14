@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label19 = new System.Windows.Forms.Label();
             this.btn_Sua_GoiBH = new Guna.UI2.WinForms.Guna2Button();
@@ -53,6 +53,7 @@
             this.TenGoiBH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MoTaChiTiet = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.btn_close = new Guna.UI2.WinForms.Guna2Button();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_GoiBaoHanh)).BeginInit();
@@ -62,6 +63,7 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.White;
+            this.tabPage2.Controls.Add(this.btn_close);
             this.tabPage2.Controls.Add(this.label19);
             this.tabPage2.Controls.Add(this.btn_Sua_GoiBH);
             this.tabPage2.Controls.Add(this.btn_Xoa_GoiBH);
@@ -75,7 +77,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1264, 834);
+            this.tabPage2.Size = new System.Drawing.Size(1264, 831);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Options";
             // 
@@ -86,7 +88,7 @@
             this.label19.ForeColor = System.Drawing.SystemColors.Highlight;
             this.label19.Location = new System.Drawing.Point(461, 47);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(374, 25);
+            this.label19.Size = new System.Drawing.Size(472, 32);
             this.label19.TabIndex = 27;
             this.label19.Text = "TÙY CHỈNH THÔNG TIN GÓI BẢO HÀNH";
             // 
@@ -99,7 +101,7 @@
             this.btn_Sua_GoiBH.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(81)))), ((int)(((byte)(68)))));
             this.btn_Sua_GoiBH.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btn_Sua_GoiBH.ForeColor = System.Drawing.Color.White;
-            this.btn_Sua_GoiBH.Location = new System.Drawing.Point(858, 407);
+            this.btn_Sua_GoiBH.Location = new System.Drawing.Point(814, 393);
             this.btn_Sua_GoiBH.Name = "btn_Sua_GoiBH";
             this.btn_Sua_GoiBH.Size = new System.Drawing.Size(180, 45);
             this.btn_Sua_GoiBH.TabIndex = 26;
@@ -114,7 +116,7 @@
             this.btn_Xoa_GoiBH.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(81)))), ((int)(((byte)(68)))));
             this.btn_Xoa_GoiBH.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btn_Xoa_GoiBH.ForeColor = System.Drawing.Color.White;
-            this.btn_Xoa_GoiBH.Location = new System.Drawing.Point(559, 407);
+            this.btn_Xoa_GoiBH.Location = new System.Drawing.Point(325, 393);
             this.btn_Xoa_GoiBH.Name = "btn_Xoa_GoiBH";
             this.btn_Xoa_GoiBH.Size = new System.Drawing.Size(180, 45);
             this.btn_Xoa_GoiBH.TabIndex = 26;
@@ -129,7 +131,7 @@
             this.btn_Them_GoiBH.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(81)))), ((int)(((byte)(68)))));
             this.btn_Them_GoiBH.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btn_Them_GoiBH.ForeColor = System.Drawing.Color.White;
-            this.btn_Them_GoiBH.Location = new System.Drawing.Point(253, 407);
+            this.btn_Them_GoiBH.Location = new System.Drawing.Point(560, 488);
             this.btn_Them_GoiBH.Name = "btn_Them_GoiBH";
             this.btn_Them_GoiBH.Size = new System.Drawing.Size(180, 45);
             this.btn_Them_GoiBH.TabIndex = 26;
@@ -201,7 +203,7 @@
             this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic);
             this.label8.Location = new System.Drawing.Point(212, 294);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(100, 21);
+            this.label8.Size = new System.Drawing.Size(126, 28);
             this.label8.TabIndex = 2;
             this.label8.Text = "Mô tả chi tiết";
             // 
@@ -211,7 +213,7 @@
             this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic);
             this.label7.Location = new System.Drawing.Point(211, 244);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(132, 21);
+            this.label7.Size = new System.Drawing.Size(166, 28);
             this.label7.TabIndex = 1;
             this.label7.Text = "Tên gói bảo hành";
             // 
@@ -221,7 +223,7 @@
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic);
             this.label6.Location = new System.Drawing.Point(212, 194);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(129, 21);
+            this.label6.Size = new System.Drawing.Size(161, 28);
             this.label6.TabIndex = 0;
             this.label6.Text = "Mã gói bảo hành";
             // 
@@ -237,7 +239,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1264, 834);
+            this.tabPage1.Size = new System.Drawing.Size(1264, 831);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Information";
             // 
@@ -267,7 +269,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(888, 68);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(157, 15);
+            this.label1.Size = new System.Drawing.Size(182, 18);
             this.label1.TabIndex = 43;
             this.label1.Text = "Nhập mã gói bảo hành:";
             // 
@@ -278,7 +280,7 @@
             this.label4.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.label4.Location = new System.Drawing.Point(490, 3);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(254, 30);
+            this.label4.Size = new System.Drawing.Size(326, 38);
             this.label4.TabIndex = 40;
             this.label4.Text = "Thông tin gói bảo hành";
             // 
@@ -317,6 +319,7 @@
             this.btn_Add_GoiBaoHanh.Size = new System.Drawing.Size(240, 52);
             this.btn_Add_GoiBaoHanh.TabIndex = 18;
             this.btn_Add_GoiBaoHanh.Text = "+ Thêm gói bảo hành";
+            this.btn_Add_GoiBaoHanh.Click += new System.EventHandler(this.btn_Add_GoiBaoHanh_Click);
             // 
             // dgv_GoiBaoHanh
             // 
@@ -324,32 +327,32 @@
             this.dgv_GoiBaoHanh.AllowUserToDeleteRows = false;
             this.dgv_GoiBaoHanh.AllowUserToResizeColumns = false;
             this.dgv_GoiBaoHanh.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.dgv_GoiBaoHanh.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            this.dgv_GoiBaoHanh.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgv_GoiBaoHanh.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgv_GoiBaoHanh.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(81)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_GoiBaoHanh.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(81)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_GoiBaoHanh.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgv_GoiBaoHanh.ColumnHeadersHeight = 80;
             this.dgv_GoiBaoHanh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgv_GoiBaoHanh.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaGoiBH,
             this.TenGoiBH,
             this.MoTaChiTiet});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_GoiBaoHanh.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_GoiBaoHanh.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgv_GoiBaoHanh.Location = new System.Drawing.Point(8, 189);
             this.dgv_GoiBaoHanh.Name = "dgv_GoiBaoHanh";
             this.dgv_GoiBaoHanh.RowHeadersVisible = false;
@@ -414,6 +417,22 @@
             this.tabControl1.Size = new System.Drawing.Size(1272, 860);
             this.tabControl1.TabIndex = 0;
             // 
+            // btn_close
+            // 
+            this.btn_close.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_close.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_close.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_close.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_close.FillColor = System.Drawing.Color.Red;
+            this.btn_close.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btn_close.ForeColor = System.Drawing.Color.White;
+            this.btn_close.Location = new System.Drawing.Point(1200, 6);
+            this.btn_close.Name = "btn_close";
+            this.btn_close.Size = new System.Drawing.Size(58, 25);
+            this.btn_close.TabIndex = 30;
+            this.btn_close.Text = "X";
+            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
+            // 
             // Form_GoiBaoHanh
             // 
             this.ClientSize = new System.Drawing.Size(1385, 892);
@@ -456,5 +475,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TenGoiBH;
         private System.Windows.Forms.DataGridViewTextBoxColumn MoTaChiTiet;
         private System.Windows.Forms.TabControl tabControl1;
+        private Guna.UI2.WinForms.Guna2Button btn_close;
     }
 }

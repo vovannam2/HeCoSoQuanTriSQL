@@ -33,9 +33,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btn_close = new Guna.UI2.WinForms.Guna2Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.btn_TimKiem_ChiTietPhieuNhap = new Guna.UI2.WinForms.Guna2Button();
-            this.btn_Add_ChiTietPhieuNhap = new Guna.UI2.WinForms.Guna2Button();
             this.dgv_ChiTietPhieuNhapKho = new Guna.UI2.WinForms.Guna2DataGridView();
             this.MaLT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaNK = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,7 +46,6 @@
             this.label19 = new System.Windows.Forms.Label();
             this.btn_Sua_CTPNK = new Guna.UI2.WinForms.Guna2Button();
             this.btn_Xoa_CTPNK = new Guna.UI2.WinForms.Guna2Button();
-            this.btn_Them_CTPNK = new Guna.UI2.WinForms.Guna2Button();
             this.txt_ThanhTienTungSP = new Guna.UI2.WinForms.Guna2TextBox();
             this.txt_ThueVAT = new Guna.UI2.WinForms.Guna2TextBox();
             this.txt_GiaNhapTungSP = new Guna.UI2.WinForms.Guna2TextBox();
@@ -74,69 +72,48 @@
             this.tabControl1.Location = new System.Drawing.Point(1, 3);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1272, 860);
+            this.tabControl1.Size = new System.Drawing.Size(1216, 602);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.White;
+            this.tabPage1.Controls.Add(this.btn_close);
             this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Controls.Add(this.btn_TimKiem_ChiTietPhieuNhap);
-            this.tabPage1.Controls.Add(this.btn_Add_ChiTietPhieuNhap);
             this.tabPage1.Controls.Add(this.dgv_ChiTietPhieuNhapKho);
             this.tabPage1.Location = new System.Drawing.Point(4, 4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1264, 831);
+            this.tabPage1.Size = new System.Drawing.Size(1208, 573);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Information";
+            // 
+            // btn_close
+            // 
+            this.btn_close.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_close.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_close.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_close.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_close.FillColor = System.Drawing.Color.Red;
+            this.btn_close.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btn_close.ForeColor = System.Drawing.Color.White;
+            this.btn_close.Location = new System.Drawing.Point(1144, 6);
+            this.btn_close.Name = "btn_close";
+            this.btn_close.Size = new System.Drawing.Size(58, 25);
+            this.btn_close.TabIndex = 46;
+            this.btn_close.Text = "X";
+            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label4.Location = new System.Drawing.Point(490, 3);
+            this.label4.Location = new System.Drawing.Point(466, 18);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(326, 38);
             this.label4.TabIndex = 40;
             this.label4.Text = "Chi tiết phiếu nhập kho";
-            // 
-            // btn_TimKiem_ChiTietPhieuNhap
-            // 
-            this.btn_TimKiem_ChiTietPhieuNhap.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(67)))), ((int)(((byte)(108)))));
-            this.btn_TimKiem_ChiTietPhieuNhap.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn_TimKiem_ChiTietPhieuNhap.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn_TimKiem_ChiTietPhieuNhap.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_TimKiem_ChiTietPhieuNhap.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_TimKiem_ChiTietPhieuNhap.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(81)))), ((int)(((byte)(68)))));
-            this.btn_TimKiem_ChiTietPhieuNhap.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btn_TimKiem_ChiTietPhieuNhap.ForeColor = System.Drawing.Color.White;
-            this.btn_TimKiem_ChiTietPhieuNhap.ImageSize = new System.Drawing.Size(52, 52);
-            this.btn_TimKiem_ChiTietPhieuNhap.Location = new System.Drawing.Point(1173, 79);
-            this.btn_TimKiem_ChiTietPhieuNhap.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_TimKiem_ChiTietPhieuNhap.Name = "btn_TimKiem_ChiTietPhieuNhap";
-            this.btn_TimKiem_ChiTietPhieuNhap.Size = new System.Drawing.Size(87, 49);
-            this.btn_TimKiem_ChiTietPhieuNhap.TabIndex = 20;
-            this.btn_TimKiem_ChiTietPhieuNhap.Text = "Tìm";
-            // 
-            // btn_Add_ChiTietPhieuNhap
-            // 
-            this.btn_Add_ChiTietPhieuNhap.BackColor = System.Drawing.Color.Transparent;
-            this.btn_Add_ChiTietPhieuNhap.BorderColor = System.Drawing.Color.IndianRed;
-            this.btn_Add_ChiTietPhieuNhap.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn_Add_ChiTietPhieuNhap.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn_Add_ChiTietPhieuNhap.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_Add_ChiTietPhieuNhap.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_Add_ChiTietPhieuNhap.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(81)))), ((int)(((byte)(68)))));
-            this.btn_Add_ChiTietPhieuNhap.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Add_ChiTietPhieuNhap.ForeColor = System.Drawing.Color.White;
-            this.btn_Add_ChiTietPhieuNhap.Location = new System.Drawing.Point(8, 76);
-            this.btn_Add_ChiTietPhieuNhap.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_Add_ChiTietPhieuNhap.Name = "btn_Add_ChiTietPhieuNhap";
-            this.btn_Add_ChiTietPhieuNhap.Size = new System.Drawing.Size(240, 52);
-            this.btn_Add_ChiTietPhieuNhap.TabIndex = 18;
-            this.btn_Add_ChiTietPhieuNhap.Text = "+ Thêm chi tiết phiếu nhập";
             // 
             // dgv_ChiTietPhieuNhapKho
             // 
@@ -173,7 +150,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_ChiTietPhieuNhapKho.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgv_ChiTietPhieuNhapKho.Location = new System.Drawing.Point(8, 189);
+            this.dgv_ChiTietPhieuNhapKho.Location = new System.Drawing.Point(57, 79);
             this.dgv_ChiTietPhieuNhapKho.Name = "dgv_ChiTietPhieuNhapKho";
             this.dgv_ChiTietPhieuNhapKho.RowHeadersVisible = false;
             this.dgv_ChiTietPhieuNhapKho.RowHeadersWidth = 62;
@@ -183,7 +160,7 @@
             this.dgv_ChiTietPhieuNhapKho.ShowCellToolTips = false;
             this.dgv_ChiTietPhieuNhapKho.ShowEditingIcon = false;
             this.dgv_ChiTietPhieuNhapKho.ShowRowErrors = false;
-            this.dgv_ChiTietPhieuNhapKho.Size = new System.Drawing.Size(1256, 636);
+            this.dgv_ChiTietPhieuNhapKho.Size = new System.Drawing.Size(1099, 446);
             this.dgv_ChiTietPhieuNhapKho.TabIndex = 0;
             this.dgv_ChiTietPhieuNhapKho.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgv_ChiTietPhieuNhapKho.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -240,7 +217,7 @@
             // 
             // ThanhTienTungSanPham
             // 
-            this.ThanhTienTungSanPham.HeaderText = "Thành Tiền Từng Sản ";
+            this.ThanhTienTungSanPham.HeaderText = "Thành Tiền Từng Sản Phẩm ";
             this.ThanhTienTungSanPham.MinimumWidth = 6;
             this.ThanhTienTungSanPham.Name = "ThanhTienTungSanPham";
             // 
@@ -250,7 +227,6 @@
             this.tabPage2.Controls.Add(this.label19);
             this.tabPage2.Controls.Add(this.btn_Sua_CTPNK);
             this.tabPage2.Controls.Add(this.btn_Xoa_CTPNK);
-            this.tabPage2.Controls.Add(this.btn_Them_CTPNK);
             this.tabPage2.Controls.Add(this.txt_ThanhTienTungSP);
             this.tabPage2.Controls.Add(this.txt_ThueVAT);
             this.tabPage2.Controls.Add(this.txt_GiaNhapTungSP);
@@ -266,7 +242,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1264, 831);
+            this.tabPage2.Size = new System.Drawing.Size(1208, 573);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Options";
             // 
@@ -290,11 +266,12 @@
             this.btn_Sua_CTPNK.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(81)))), ((int)(((byte)(68)))));
             this.btn_Sua_CTPNK.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btn_Sua_CTPNK.ForeColor = System.Drawing.Color.White;
-            this.btn_Sua_CTPNK.Location = new System.Drawing.Point(879, 506);
+            this.btn_Sua_CTPNK.Location = new System.Drawing.Point(816, 506);
             this.btn_Sua_CTPNK.Name = "btn_Sua_CTPNK";
             this.btn_Sua_CTPNK.Size = new System.Drawing.Size(180, 45);
             this.btn_Sua_CTPNK.TabIndex = 26;
             this.btn_Sua_CTPNK.Text = "Sửa";
+            this.btn_Sua_CTPNK.Click += new System.EventHandler(this.btn_Sua_CTPNK_Click);
             // 
             // btn_Xoa_CTPNK
             // 
@@ -305,27 +282,12 @@
             this.btn_Xoa_CTPNK.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(81)))), ((int)(((byte)(68)))));
             this.btn_Xoa_CTPNK.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btn_Xoa_CTPNK.ForeColor = System.Drawing.Color.White;
-            this.btn_Xoa_CTPNK.Location = new System.Drawing.Point(580, 506);
+            this.btn_Xoa_CTPNK.Location = new System.Drawing.Point(291, 506);
             this.btn_Xoa_CTPNK.Name = "btn_Xoa_CTPNK";
             this.btn_Xoa_CTPNK.Size = new System.Drawing.Size(180, 45);
             this.btn_Xoa_CTPNK.TabIndex = 26;
             this.btn_Xoa_CTPNK.Text = "Xóa";
-            // 
-            // btn_Them_CTPNK
-            // 
-            this.btn_Them_CTPNK.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn_Them_CTPNK.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn_Them_CTPNK.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_Them_CTPNK.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_Them_CTPNK.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(81)))), ((int)(((byte)(68)))));
-            this.btn_Them_CTPNK.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btn_Them_CTPNK.ForeColor = System.Drawing.Color.White;
-            this.btn_Them_CTPNK.Location = new System.Drawing.Point(274, 506);
-            this.btn_Them_CTPNK.Name = "btn_Them_CTPNK";
-            this.btn_Them_CTPNK.Size = new System.Drawing.Size(180, 45);
-            this.btn_Them_CTPNK.TabIndex = 26;
-            this.btn_Them_CTPNK.Text = "Thêm";
-            this.btn_Them_CTPNK.Click += new System.EventHandler(this.btn_Them_CTPNK_Click);
+            this.btn_Xoa_CTPNK.Click += new System.EventHandler(this.btn_Xoa_CTPNK_Click);
             // 
             // txt_ThanhTienTungSP
             // 
@@ -509,10 +471,11 @@
             // 
             // Form_ChiTietPhieuNhap
             // 
-            this.ClientSize = new System.Drawing.Size(1385, 892);
+            this.ClientSize = new System.Drawing.Size(1260, 628);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_ChiTietPhieuNhap";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.Form_ChiTietPhieuNhap_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -531,8 +494,6 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private Guna.UI2.WinForms.Guna2DataGridView dgv_ChiTietPhieuNhapKho;
-        private Guna.UI2.WinForms.Guna2Button btn_TimKiem_ChiTietPhieuNhap;
-        private Guna.UI2.WinForms.Guna2Button btn_Add_ChiTietPhieuNhap;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
@@ -544,12 +505,12 @@
         private Guna.UI2.WinForms.Guna2TextBox txt_GiaNhapTungSP;
         private Guna.UI2.WinForms.Guna2TextBox txt_MaNK;
         private Guna.UI2.WinForms.Guna2TextBox txt_MaLT;
-        private Guna.UI2.WinForms.Guna2Button btn_Them_CTPNK;
         private System.Windows.Forms.Label label19;
         private Guna.UI2.WinForms.Guna2Button btn_Sua_CTPNK;
         private Guna.UI2.WinForms.Guna2Button btn_Xoa_CTPNK;
         private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2TextBox txt_SLSP;
+        private Guna.UI2.WinForms.Guna2Button btn_close;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaLT;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaNK;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoLuongSanPham;

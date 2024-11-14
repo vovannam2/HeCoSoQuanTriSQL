@@ -5,35 +5,55 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+
 namespace quanlylaptop
 {
     class MyConnect
     {
-        
-        SqlConnection conAdmin = new SqlConnection(@"Data Source=LAPTOP-OQ5HTD48;Initial Catalog=QuanLyLapTop2;Integrated Security=True");
-        public SqlConnection getConnectionAdmin
+
+        private string connectionString;
+
+        public MyConnect(bool isAdmin = false)
+        {
+            if (isAdmin)
+            {
+                // Kết nối với quyền admin
+                connectionString = @"Data Source=LAPTOP-OQ5HTD48;Initial Catalog=QuanLyLapTop2;Integrated Security=True";
+            }
+            else
+            {
+                // Kết nối với quyền employee
+                connectionString = @"Data Source=LAPTOP-OQ5HTD48;Initial Catalog=QuanLyLapTop2;User ID=emp1;Password=123";
+            }
+
+        }
+        public SqlConnection getConnection
         {
             get
             {
-                return conAdmin;
+                return new SqlConnection(connectionString);
             }
         }
-        // open the connection
-        
-        public void openConnectionAdmin()
+
+        //Mở kết nối
+        public void openConnection(SqlConnection con)
         {
-            if (conAdmin.State == ConnectionState.Closed)
+            if (con.State == ConnectionState.Closed)
             {
-                conAdmin.Open();
+                con.Open();
             }
         }
-        
-        public void closeConnectionAdmin()
+
+        public void closeConnection(SqlConnection con)
         {
-            if (conAdmin.State == ConnectionState.Open)
+            if (con.State == ConnectionState.Open)
             {
-                conAdmin.Close();
+                con.Close();
             }
         }
+
     }
 }
+
+
+

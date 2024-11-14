@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dtp_ngaykt = new Guna.UI2.WinForms.Guna2DateTimePicker();
@@ -41,7 +41,13 @@
             this.btn_TimKiem_HoaDon = new Guna.UI2.WinForms.Guna2Button();
             this.btn_Add_HoaDon = new Guna.UI2.WinForms.Guna2Button();
             this.dgv_HoaDon = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.MaHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayMuaHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoTienThanhToan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PTTT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btn_close = new Guna.UI2.WinForms.Guna2Button();
             this.dtp_dateNgayMH = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label19 = new System.Windows.Forms.Label();
             this.btn_Sua_HoaDon = new Guna.UI2.WinForms.Guna2Button();
@@ -56,11 +62,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.MaHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayMuaHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoTienThanhToan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PTTT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_HoaDon)).BeginInit();
@@ -99,9 +100,10 @@
             // dtp_ngaykt
             // 
             this.dtp_ngaykt.Checked = true;
+            this.dtp_ngaykt.CustomFormat = "dd/MM/yyyy";
             this.dtp_ngaykt.FillColor = System.Drawing.Color.White;
             this.dtp_ngaykt.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dtp_ngaykt.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.dtp_ngaykt.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtp_ngaykt.Location = new System.Drawing.Point(881, 91);
             this.dtp_ngaykt.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtp_ngaykt.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
@@ -113,9 +115,10 @@
             // dtp_ngaybd
             // 
             this.dtp_ngaybd.Checked = true;
+            this.dtp_ngaybd.CustomFormat = "dd/MM/yyyy";
             this.dtp_ngaybd.FillColor = System.Drawing.Color.White;
             this.dtp_ngaybd.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dtp_ngaybd.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.dtp_ngaybd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtp_ngaybd.Location = new System.Drawing.Point(583, 91);
             this.dtp_ngaybd.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtp_ngaybd.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
@@ -191,6 +194,7 @@
             this.btn_Add_HoaDon.Size = new System.Drawing.Size(240, 52);
             this.btn_Add_HoaDon.TabIndex = 18;
             this.btn_Add_HoaDon.Text = "+ Thêm hóa đơn";
+            this.btn_Add_HoaDon.Click += new System.EventHandler(this.btn_Add_HoaDon_Click);
             // 
             // dgv_HoaDon
             // 
@@ -198,18 +202,18 @@
             this.dgv_HoaDon.AllowUserToDeleteRows = false;
             this.dgv_HoaDon.AllowUserToResizeColumns = false;
             this.dgv_HoaDon.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgv_HoaDon.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            this.dgv_HoaDon.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgv_HoaDon.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgv_HoaDon.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(81)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_HoaDon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(81)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_HoaDon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgv_HoaDon.ColumnHeadersHeight = 80;
             this.dgv_HoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgv_HoaDon.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -218,14 +222,14 @@
             this.NgayMuaHang,
             this.SoTienThanhToan,
             this.PTTT});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_HoaDon.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_HoaDon.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgv_HoaDon.Location = new System.Drawing.Point(7, 199);
             this.dgv_HoaDon.Name = "dgv_HoaDon";
             this.dgv_HoaDon.RowHeadersVisible = false;
@@ -261,9 +265,40 @@
             this.dgv_HoaDon.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgv_HoaDon.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_HoaDon_CellContentClick);
             // 
+            // MaHD
+            // 
+            this.MaHD.HeaderText = "Mã hóa đơn";
+            this.MaHD.MinimumWidth = 8;
+            this.MaHD.Name = "MaHD";
+            // 
+            // MaKH
+            // 
+            this.MaKH.HeaderText = "Mã khách hàng";
+            this.MaKH.MinimumWidth = 6;
+            this.MaKH.Name = "MaKH";
+            // 
+            // NgayMuaHang
+            // 
+            this.NgayMuaHang.HeaderText = "Ngày mua hàng";
+            this.NgayMuaHang.MinimumWidth = 6;
+            this.NgayMuaHang.Name = "NgayMuaHang";
+            // 
+            // SoTienThanhToan
+            // 
+            this.SoTienThanhToan.HeaderText = "Số tiền thanh toán";
+            this.SoTienThanhToan.MinimumWidth = 6;
+            this.SoTienThanhToan.Name = "SoTienThanhToan";
+            // 
+            // PTTT
+            // 
+            this.PTTT.HeaderText = "Phương thức thanh toán";
+            this.PTTT.MinimumWidth = 6;
+            this.PTTT.Name = "PTTT";
+            // 
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.White;
+            this.tabPage2.Controls.Add(this.btn_close);
             this.tabPage2.Controls.Add(this.dtp_dateNgayMH);
             this.tabPage2.Controls.Add(this.label19);
             this.tabPage2.Controls.Add(this.btn_Sua_HoaDon);
@@ -285,19 +320,36 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Options";
             // 
+            // btn_close
+            // 
+            this.btn_close.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_close.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_close.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_close.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_close.FillColor = System.Drawing.Color.Red;
+            this.btn_close.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btn_close.ForeColor = System.Drawing.Color.White;
+            this.btn_close.Location = new System.Drawing.Point(1200, 6);
+            this.btn_close.Name = "btn_close";
+            this.btn_close.Size = new System.Drawing.Size(58, 25);
+            this.btn_close.TabIndex = 30;
+            this.btn_close.Text = "X";
+            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
+            // 
             // dtp_dateNgayMH
             // 
             this.dtp_dateNgayMH.Checked = true;
+            this.dtp_dateNgayMH.CustomFormat = "dd/MM/yyyy";
             this.dtp_dateNgayMH.FillColor = System.Drawing.Color.White;
             this.dtp_dateNgayMH.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dtp_dateNgayMH.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.dtp_dateNgayMH.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtp_dateNgayMH.Location = new System.Drawing.Point(468, 224);
             this.dtp_dateNgayMH.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtp_dateNgayMH.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtp_dateNgayMH.Name = "dtp_dateNgayMH";
             this.dtp_dateNgayMH.Size = new System.Drawing.Size(459, 42);
             this.dtp_dateNgayMH.TabIndex = 29;
-            this.dtp_dateNgayMH.Value = new System.DateTime(2024, 10, 19, 13, 51, 4, 656);
+            this.dtp_dateNgayMH.Value = new System.DateTime(2024, 11, 10, 0, 0, 0, 0);
             // 
             // label19
             // 
@@ -319,11 +371,12 @@
             this.btn_Sua_HoaDon.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(81)))), ((int)(((byte)(68)))));
             this.btn_Sua_HoaDon.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btn_Sua_HoaDon.ForeColor = System.Drawing.Color.White;
-            this.btn_Sua_HoaDon.Location = new System.Drawing.Point(899, 439);
+            this.btn_Sua_HoaDon.Location = new System.Drawing.Point(822, 439);
             this.btn_Sua_HoaDon.Name = "btn_Sua_HoaDon";
             this.btn_Sua_HoaDon.Size = new System.Drawing.Size(180, 45);
             this.btn_Sua_HoaDon.TabIndex = 26;
             this.btn_Sua_HoaDon.Text = "Sửa";
+            this.btn_Sua_HoaDon.Click += new System.EventHandler(this.btn_Sua_HoaDon_Click);
             // 
             // btn_Xoa_HoaDon
             // 
@@ -334,11 +387,12 @@
             this.btn_Xoa_HoaDon.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(81)))), ((int)(((byte)(68)))));
             this.btn_Xoa_HoaDon.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btn_Xoa_HoaDon.ForeColor = System.Drawing.Color.White;
-            this.btn_Xoa_HoaDon.Location = new System.Drawing.Point(599, 439);
+            this.btn_Xoa_HoaDon.Location = new System.Drawing.Point(330, 439);
             this.btn_Xoa_HoaDon.Name = "btn_Xoa_HoaDon";
             this.btn_Xoa_HoaDon.Size = new System.Drawing.Size(180, 45);
             this.btn_Xoa_HoaDon.TabIndex = 26;
             this.btn_Xoa_HoaDon.Text = "Xóa";
+            this.btn_Xoa_HoaDon.Click += new System.EventHandler(this.btn_Xoa_HoaDon_Click);
             // 
             // btn_Them_HoaDon
             // 
@@ -349,7 +403,7 @@
             this.btn_Them_HoaDon.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(81)))), ((int)(((byte)(68)))));
             this.btn_Them_HoaDon.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btn_Them_HoaDon.ForeColor = System.Drawing.Color.White;
-            this.btn_Them_HoaDon.Location = new System.Drawing.Point(299, 439);
+            this.btn_Them_HoaDon.Location = new System.Drawing.Point(552, 549);
             this.btn_Them_HoaDon.Name = "btn_Them_HoaDon";
             this.btn_Them_HoaDon.Size = new System.Drawing.Size(180, 45);
             this.btn_Them_HoaDon.TabIndex = 26;
@@ -486,36 +540,6 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "Mã hóa đơn:";
             // 
-            // MaHD
-            // 
-            this.MaHD.HeaderText = "Mã hóa đơn";
-            this.MaHD.MinimumWidth = 8;
-            this.MaHD.Name = "MaHD";
-            // 
-            // MaKH
-            // 
-            this.MaKH.HeaderText = "Mã khách hàng";
-            this.MaKH.MinimumWidth = 6;
-            this.MaKH.Name = "MaKH";
-            // 
-            // NgayMuaHang
-            // 
-            this.NgayMuaHang.HeaderText = "Ngày mua hàng";
-            this.NgayMuaHang.MinimumWidth = 6;
-            this.NgayMuaHang.Name = "NgayMuaHang";
-            // 
-            // SoTienThanhToan
-            // 
-            this.SoTienThanhToan.HeaderText = "Số tiền thanh toán";
-            this.SoTienThanhToan.MinimumWidth = 6;
-            this.SoTienThanhToan.Name = "SoTienThanhToan";
-            // 
-            // PTTT
-            // 
-            this.PTTT.HeaderText = "Phương thức thanh toán";
-            this.PTTT.MinimumWidth = 6;
-            this.PTTT.Name = "PTTT";
-            // 
             // Form_HoaDon
             // 
             this.ClientSize = new System.Drawing.Size(1385, 892);
@@ -566,5 +590,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayMuaHang;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoTienThanhToan;
         private System.Windows.Forms.DataGridViewTextBoxColumn PTTT;
+        private Guna.UI2.WinForms.Guna2Button btn_close;
     }
 }

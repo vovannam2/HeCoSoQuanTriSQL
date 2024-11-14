@@ -16,17 +16,18 @@ namespace quanlylaptop
     public partial class Form_Laptop : Form
     {
 
-        //MyConnect myconn = new MyConnect();
+        
         public Form_Laptop()
         {
             InitializeComponent();
         }
-        MyConnect myconn = new MyConnect();
+        MyConnect myconn = new MyConnect(Properties.Settings.Default.IsAdmin);
         ClassDAL classDAL = new ClassDAL();
-        private void Form_Laptop_Load(object sender, EventArgs e)
+        public void Form_Laptop_Load(object sender, EventArgs e)
         {
-            ClassDAL classDAL = new ClassDAL();
+           
             classDAL.loadData("select * from v1_infLaptop", dgv_Laptop);
+            
         }
 
         private void dgv_Laptop_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -34,12 +35,18 @@ namespace quanlylaptop
             // Kiểm tra xem người dùng có click vào hàng hợp lệ không
             if (e.RowIndex >= 0)
             {
+                btn_addLapTop.Visible = true;
                 DataGridViewRow row = this.dgv_Laptop.Rows[e.RowIndex];
 
                 // Gán giá trị vào các TextBox tương ứng, thực hiện chuyển đổi kiểu dữ liệu khi cần
                 this.txt_MaLT.Text = row.Cells["MaLT"].Value.ToString();
                 this.txt_TenLT.Text = row.Cells["TenLT"].Value.ToString();
-                this.txt_TenHangLT.Text = row.Cells["TenHangLT"].Value.ToString();
+
+                // Đặt giá trị cho ComboBox
+                this.cb2_hanglaptop.SelectedItem = row.Cells["TenHangLT"].Value.ToString();
+                this.cb2_mausac.SelectedItem = row.Cells["MauSac"].Value.ToString();
+                this.cb2_dungluong.SelectedItem = row.Cells["DungLuongBoNho"].Value.ToString();
+                this.cb2_manhinh.SelectedItem = row.Cells["ManHinh"].Value.ToString();
 
                 // Chuyển đổi kiểu dữ liệu cho các trường cần thiết
                 this.txt_SoLuong.Text = Convert.ToInt32(row.Cells["SoLuong"].Value).ToString();
@@ -47,12 +54,10 @@ namespace quanlylaptop
                 this.txt_ThoiGianBaoHanh.Text = Convert.ToInt32(row.Cells["ThoiGianBaoHanh"].Value).ToString();
 
                 this.txt_GiaBanGoc.Text = row.Cells["GiaBanGoc"].Value.ToString();
-                this.txt_MauSac.Text = row.Cells["MauSac"].Value.ToString();
-                this.txt_DungLuongBoNho.Text = row.Cells["DungLuongBoNho"].Value.ToString();
-                this.txt_ManHinh.Text = row.Cells["ManHinh"].Value.ToString();
                 this.txt_CPU.Text = row.Cells["CPU"].Value.ToString();
                 this.txt_QuaTangKem.Text = row.Cells["QuaTangKem"].Value.ToString();
                 this.txt_Pin.Text = row.Cells["Pin"].Value.ToString();
+
                 // Chuyển sang tab Options
                 this.tabControl1.SelectedTab = this.tabPage2;
             }
@@ -62,22 +67,22 @@ namespace quanlylaptop
         {
             string MaLT = txt_MaLT.Text.Trim(); // Mã laptop
             string TenLT = txt_TenLT.Text.Trim(); // Tên laptop
-            string TenHangLT = txt_TenHangLT.Text.Trim(); // Tên hãng laptop
+            string TenHangLT = cb2_hanglaptop.Text.Trim(); // Tên hãng laptop
             int SoLuong = int.Parse(txt_SoLuong.Text.Trim()); // Số lượng
             decimal KhoiLuong = decimal.Parse(txt_KhoiLuong.Text.Trim()); // Khối lượng
             int ThoiGianBaoHanh = int.Parse(txt_ThoiGianBaoHanh.Text.Trim()); // Thời gian bảo hành
             int GiaBanGoc = int.Parse(txt_GiaBanGoc.Text.Trim()); // Giá bán gốc
-            string MauSac = txt_MauSac.Text.Trim(); // Màu sắc
-            string DungLuongBoNho = txt_DungLuongBoNho.Text.Trim(); // Dung lượng bộ nhớ
-            string ManHinh = txt_ManHinh.Text.Trim(); // Thông tin màn hình
+            string MauSac = cb2_mausac.Text.Trim(); // Màu sắc
+            string DungLuongBoNho = cb2_dungluong.Text.Trim(); // Dung lượng bộ nhớ
+            string ManHinh = cb2_manhinh.Text.Trim(); // Thông tin màn hình
             string CPU = txt_CPU.Text.Trim(); // Thông tin CPU
             string QuaTangKem = txt_QuaTangKem.Text.Trim(); // Quà tặng kèm theo
             string Pin = txt_Pin.Text.Trim(); // Thông tin pin
-
+            SqlConnection con = myconn.getConnection;
             try
             {
-                myconn.openConnectionAdmin();
-                SqlCommand cmd = new SqlCommand("proc_AddLaptop", myconn.getConnectionAdmin);
+                myconn.openConnection(con);
+                SqlCommand cmd = new SqlCommand("proc_AddLaptop", con);
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 // Thêm tham số vào thủ tục
@@ -111,67 +116,33 @@ namespace quanlylaptop
             }
             finally
             {
-                myconn.closeConnectionAdmin(); // Đảm bảo kết nối được đóng trong mọi trường hợp
-            }
-        }
-
-
-        private void remove_Laptop(String maLT)
-        {
-            try
-            {
-                DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa laptop này không?", "Remove laptop", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
-                if (result == DialogResult.Yes)
-                {
-
-                    SqlCommand cmd = new SqlCommand("EXEC proc_DeleteLaptop @MaLT", myconn.getConnectionAdmin);
-                    cmd.Parameters.Add("@MaLT", SqlDbType.NChar, 10).Value = maLT;
-                    myconn.openConnectionAdmin();
-                    if (cmd.ExecuteNonQuery() == -1)
-                    {
-                        MessageBox.Show("Xóa thành công!", "Remove Laptop", MessageBoxButtons.OK,
-                       MessageBoxIcon.Information);
-
-                        myconn.closeConnectionAdmin();
-
-                        classDAL.loadData("select * from view1_LaptopDangBan", dgv_Laptop);
-                        tabControl1.SelectedTab = this.tabPage1;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Xóa thất bại 1001!", "Remove Laptop", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        myconn.closeConnectionAdmin();
-
-                    }
-                }
-            }
-            catch
-            {
-                MessageBox.Show("Xóa thất bại! 1002", "Remove Laptop", MessageBoxButtons.OK,
-               MessageBoxIcon.Error);
-
+                myconn.closeConnection(con); // Đảm bảo kết nối được đóng trong mọi trường hợp
             }
         }
 
         private void btn_xoaLaptop_Click(object sender, EventArgs e)
         {
             String maLT = txt_MaLT.Text;
-            remove_Laptop(maLT);
+            ClassDAL dal = new ClassDAL();
+            dal.ThucThi("EXEC proc_DeleteLaptop @MaLT = " + maLT + "");
+            Form_Laptop_Load(sender, e);
+            tabControl1.SelectedIndex = 0;
+           
         }
 
         private void btn_updateLaptop_Click(object sender, EventArgs e)
         {
             String maLT = txt_MaLT.Text;
             String tenLT = txt_TenLT.Text;
-            String tenHangLT = txt_TenHangLT.Text;
+            String tenHangLT = cb2_hanglaptop.Text;
             if (int.TryParse(txt_SoLuong.Text, out int soLuongLT) &&
                 decimal.TryParse(txt_KhoiLuong.Text, NumberStyles.Any, CultureInfo.InvariantCulture, out decimal khoiLuong) &&
                 int.TryParse(txt_ThoiGianBaoHanh.Text, out int thoiGianBaoHanh) &&
                 int.TryParse(txt_GiaBanGoc.Text, out int giaBanGoc))
             {
-                String mauSac = txt_MauSac.Text;
-                String dungLuongBoNho = txt_DungLuongBoNho.Text;
-                String manHinh = txt_ManHinh.Text;
+                String mauSac = cb2_mausac.Text;
+                String dungLuongBoNho = cb2_dungluong.Text;
+                String manHinh = cb2_manhinh.Text;
                 String cpu = txt_CPU.Text;
                 String quaTangKem = string.IsNullOrWhiteSpace(txt_QuaTangKem.Text) ? "Không có" : txt_QuaTangKem.Text;
                 String pin = txt_Pin.Text;
@@ -199,9 +170,11 @@ namespace quanlylaptop
         }
         public Boolean UpdateLaptop(string maLT, string tenLT, string tenHangLT, int soLuong, decimal khoiLuong, int thoiGianBaoHanh, int giaBanGoc, string mauSac, string dungLuongBoNho, string manHinh, string cpu, string quaTangKem, string pin)
         {
+            SqlConnection con = myconn.getConnection;
             try
             {
-                using (SqlCommand cmd = new SqlCommand("pro_CapNhatLaptop", myconn.getConnectionAdmin))
+                myconn.openConnection(con);
+                using (SqlCommand cmd = new SqlCommand("pro_CapNhatLaptop", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
 
@@ -220,7 +193,8 @@ namespace quanlylaptop
                     cmd.Parameters.Add("@QuaTangKem", SqlDbType.NVarChar, 255).Value = quaTangKem ?? "Không có";
                     cmd.Parameters.Add("@Pin", SqlDbType.NVarChar, 50).Value = pin;
 
-                    myconn.openConnectionAdmin();
+                  
+                    
 
                     // Thực thi lệnh
                     int rowsAffected = cmd.ExecuteNonQuery();
@@ -247,7 +221,7 @@ namespace quanlylaptop
             }
             finally
             {
-                myconn.closeConnectionAdmin();
+                myconn.closeConnection(con);
             }
 
         }
@@ -256,21 +230,101 @@ namespace quanlylaptop
         {
             if (e.KeyCode == Keys.Enter)
             {
-                string tenKh = txt_TimKiemLT_TenLT.Text.Trim(); // Lấy tên khách hàng từ ô tìm kiếm
-
-                if (!string.IsNullOrEmpty(tenKh))
-                {
-                    // Nếu có tên khách hàng, tạo query để tìm kiếm
-                    string query = $"SELECT * FROM TimKiemLaptopTheoTen('{tenKh}')"; // Thay thế bằng tên hàm tìm kiếm trong SQL Server
-                    ClassDAL classDAL = new ClassDAL();
-                    classDAL.loadData(query, dgv_Laptop); // Gọi hàm loadData để đổ dữ liệu vào DataGridView
-                }
-                else
-                {
-                    // Nếu ô tìm kiếm trống, tải lại toàn bộ dữ liệu của khách hàng
-                    Form_Laptop_Load(sender, e);
-                }
+                
             }
+        }
+
+        
+
+        // Phương thức lọc dữ liệu chung
+        private void FilterData()
+        {
+            // Thu thập giá trị từ ComboBox
+            string hangSX = string.IsNullOrWhiteSpace(cb1_HangLaptop.Text) ? null : cb1_HangLaptop.Text.Trim();
+            decimal? giaMax = null;
+            if (decimal.TryParse(cb_giaMax.Text.Trim(), out decimal price))
+            {
+                giaMax = price;
+            }
+            string dungLuongBoNho = string.IsNullOrWhiteSpace(cb1_dungluong.Text) ? null : cb1_dungluong.Text.Trim();
+            string manHinh = string.IsNullOrWhiteSpace(cb1_KichThuocManHinh.Text) ? null : cb1_KichThuocManHinh.Text.Trim();
+            string mauSac = string.IsNullOrWhiteSpace(cb1_mausac.Text) ? null : cb1_mausac.Text.Trim();
+
+            // Tạo câu truy vấn dựa trên các giá trị đã chọn
+            string query = $"SELECT * FROM dbo.FLocLaptop({(string.IsNullOrEmpty(hangSX) ? "NULL" : $"N'{hangSX}'")}, {(giaMax.HasValue ? giaMax.ToString() : "NULL")}, {(string.IsNullOrEmpty(dungLuongBoNho) ? "NULL" : $"N'{dungLuongBoNho}'")}, {(string.IsNullOrEmpty(manHinh) ? "NULL" : $"N'{manHinh}'")}, {(string.IsNullOrEmpty(mauSac) ? "NULL" : $"N'{mauSac}'")})";
+
+            Console.WriteLine(query); // In câu truy vấn ra console hoặc log để kiểm tra
+
+            // Gọi phương thức loadData và truyền câu query
+            classDAL.loadData(query, dgv_Laptop);
+
+            if (dgv_Laptop.Rows.Count == 0)
+            {
+                MessageBox.Show("Không có dữ liệu để hiển thị.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Xóa lựa chọn trong các ComboBox
+                cb1_HangLaptop.SelectedIndex = -1;
+                cb_giaMax.SelectedIndex = -1;
+                cb1_dungluong.SelectedIndex = -1;
+                cb1_KichThuocManHinh.SelectedIndex = -1;
+                cb1_mausac.SelectedIndex = -1;
+
+                // Bạn có thể gọi LoadInitialData để nạp lại dữ liệu nếu cần
+                classDAL.loadData("select * from v1_infLaptop", dgv_Laptop);
+            }
+        }
+
+        private void cb_giaMax_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FilterData();
+        }
+
+        private void cb1_HangLaptop_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FilterData();
+        }
+
+        private void cb1_dungluong_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FilterData();
+        }
+
+        private void cb1_mausac_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FilterData();
+        }
+
+        private void cb1_KichThuocManHinh_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FilterData();
+        }
+
+        private void btn_close_Click(object sender, EventArgs e)
+        {
+            this.txt_MaLT.Text = string.Empty;
+            this.txt_TenLT.Text = string.Empty;
+            this.txt_SoLuong.Text = string.Empty;
+            this.txt_KhoiLuong.Text = string.Empty;
+            this.txt_GiaBanGoc.Text = string.Empty;
+            this.txt_Pin.Text = string.Empty;
+            this.txt_QuaTangKem.Text = string.Empty;
+            this.txt_CPU.Text = string.Empty;
+
+
+            this.tabControl1.SelectedTab = this.tabPage1;
+            this.label19.Text = "TÙY CHỈNH THÔNG TIN LAPTOP";
+            this.btn_updateLaptop.Visible = true;
+            this.btn_xoaLaptop.Visible = true;
+            this.btn_addLapTop.Visible = false;
+        }
+
+        private void btn_Add_Laptop_Click(object sender, EventArgs e)
+        {
+            this.tabControl1.SelectedTab = this.tabPage2;
+            this.label19.Text = "THÊM LAPTOP";
+            this.btn_updateLaptop.Visible = false; // Ẩn nút "Thêm"
+            this.btn_xoaLaptop.Visible = false; // Ẩn nút "Thêm"
+            this.btn_addLapTop.Visible = true;
         }
     }
 }

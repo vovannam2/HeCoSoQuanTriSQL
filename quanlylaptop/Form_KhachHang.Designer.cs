@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label4 = new System.Windows.Forms.Label();
@@ -101,7 +101,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1264, 834);
+            this.tabPage1.Size = new System.Drawing.Size(1264, 831);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Information";
             // 
@@ -112,7 +112,7 @@
             this.label4.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.label4.Location = new System.Drawing.Point(460, 4);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(238, 30);
+            this.label4.Size = new System.Drawing.Size(305, 38);
             this.label4.TabIndex = 39;
             this.label4.Text = "Thông tin khách hàng";
             // 
@@ -206,7 +206,7 @@
             this.label3.Location = new System.Drawing.Point(735, 154);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 15);
+            this.label3.Size = new System.Drawing.Size(90, 18);
             this.label3.TabIndex = 28;
             this.label3.Text = "Nhập SĐT:";
             // 
@@ -217,7 +217,7 @@
             this.label2.Location = new System.Drawing.Point(496, 154);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 15);
+            this.label2.Size = new System.Drawing.Size(105, 18);
             this.label2.TabIndex = 26;
             this.label2.Text = "Nhập CCCD:";
             // 
@@ -228,7 +228,7 @@
             this.label1.Location = new System.Drawing.Point(259, 154);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(112, 15);
+            this.label1.Size = new System.Drawing.Size(132, 18);
             this.label1.TabIndex = 24;
             this.label1.Text = "Nhập họ tên KH:";
             // 
@@ -268,6 +268,7 @@
             this.btn_Add_KhachHang.Size = new System.Drawing.Size(240, 52);
             this.btn_Add_KhachHang.TabIndex = 18;
             this.btn_Add_KhachHang.Text = "+ Thêm khách hàng";
+            this.btn_Add_KhachHang.Click += new System.EventHandler(this.btn_Add_KhachHang_Click);
             // 
             // dgv_KhachHang
             // 
@@ -275,18 +276,18 @@
             this.dgv_KhachHang.AllowUserToDeleteRows = false;
             this.dgv_KhachHang.AllowUserToResizeColumns = false;
             this.dgv_KhachHang.AllowUserToResizeRows = false;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
-            this.dgv_KhachHang.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgv_KhachHang.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_KhachHang.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgv_KhachHang.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(81)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_KhachHang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(81)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_KhachHang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_KhachHang.ColumnHeadersHeight = 80;
             this.dgv_KhachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgv_KhachHang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -296,16 +297,17 @@
             this.SoCCCD,
             this.SDT,
             this.TongSoTienDaGD});
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_KhachHang.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_KhachHang.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_KhachHang.Location = new System.Drawing.Point(16, 250);
             this.dgv_KhachHang.Name = "dgv_KhachHang";
+            this.dgv_KhachHang.ReadOnly = true;
             this.dgv_KhachHang.RowHeadersVisible = false;
             this.dgv_KhachHang.RowHeadersWidth = 62;
             this.dgv_KhachHang.RowTemplate.Height = 24;
@@ -329,7 +331,7 @@
             this.dgv_KhachHang.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.dgv_KhachHang.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgv_KhachHang.ThemeStyle.HeaderStyle.Height = 80;
-            this.dgv_KhachHang.ThemeStyle.ReadOnly = false;
+            this.dgv_KhachHang.ThemeStyle.ReadOnly = true;
             this.dgv_KhachHang.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dgv_KhachHang.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgv_KhachHang.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -344,36 +346,42 @@
             this.MaKH.HeaderText = "Mã khách hàng";
             this.MaKH.MinimumWidth = 8;
             this.MaKH.Name = "MaKH";
+            this.MaKH.ReadOnly = true;
             // 
             // LoaiKH
             // 
             this.LoaiKH.HeaderText = "Loại khách hàng";
             this.LoaiKH.MinimumWidth = 6;
             this.LoaiKH.Name = "LoaiKH";
+            this.LoaiKH.ReadOnly = true;
             // 
             // HoTenKH
             // 
             this.HoTenKH.HeaderText = "Họ tên khách hàng";
             this.HoTenKH.MinimumWidth = 6;
             this.HoTenKH.Name = "HoTenKH";
+            this.HoTenKH.ReadOnly = true;
             // 
             // SoCCCD
             // 
             this.SoCCCD.HeaderText = "Số CCCD";
             this.SoCCCD.MinimumWidth = 6;
             this.SoCCCD.Name = "SoCCCD";
+            this.SoCCCD.ReadOnly = true;
             // 
             // SDT
             // 
             this.SDT.HeaderText = "Số điện thoại";
             this.SDT.MinimumWidth = 6;
             this.SDT.Name = "SDT";
+            this.SDT.ReadOnly = true;
             // 
             // TongSoTienDaGD
             // 
             this.TongSoTienDaGD.HeaderText = "Tổng tiền giao dịch";
             this.TongSoTienDaGD.MinimumWidth = 6;
             this.TongSoTienDaGD.Name = "TongSoTienDaGD";
+            this.TongSoTienDaGD.ReadOnly = true;
             // 
             // tabPage2
             // 
@@ -397,7 +405,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1264, 834);
+            this.tabPage2.Size = new System.Drawing.Size(1264, 831);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Options";
             // 
@@ -408,7 +416,7 @@
             this.label19.ForeColor = System.Drawing.SystemColors.Highlight;
             this.label19.Location = new System.Drawing.Point(462, 37);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(362, 25);
+            this.label19.Size = new System.Drawing.Size(455, 32);
             this.label19.TabIndex = 27;
             this.label19.Text = "TÙY CHỈNH THÔNG TIN KHÁCH HÀNG";
             // 
@@ -426,6 +434,7 @@
             this.btn_Sua_KhachHang.Size = new System.Drawing.Size(180, 45);
             this.btn_Sua_KhachHang.TabIndex = 26;
             this.btn_Sua_KhachHang.Text = "Sửa";
+            this.btn_Sua_KhachHang.Click += new System.EventHandler(this.btn_Sua_KhachHang_Click);
             // 
             // btn_Xoa_KhachHang
             // 
@@ -441,6 +450,7 @@
             this.btn_Xoa_KhachHang.Size = new System.Drawing.Size(180, 45);
             this.btn_Xoa_KhachHang.TabIndex = 26;
             this.btn_Xoa_KhachHang.Text = "Xóa";
+            this.btn_Xoa_KhachHang.Click += new System.EventHandler(this.btn_Xoa_KhachHang_Click);
             // 
             // btn_Them_KhachHang
             // 
@@ -584,7 +594,7 @@
             this.label11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic);
             this.label11.Location = new System.Drawing.Point(281, 390);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(187, 21);
+            this.label11.Size = new System.Drawing.Size(237, 28);
             this.label11.TabIndex = 5;
             this.label11.Text = "Tổng số tiền đã giao dịch:";
             // 
@@ -594,7 +604,7 @@
             this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic);
             this.label10.Location = new System.Drawing.Point(281, 340);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(104, 21);
+            this.label10.Size = new System.Drawing.Size(130, 28);
             this.label10.TabIndex = 4;
             this.label10.Text = "Số điện thoại:";
             // 
@@ -604,7 +614,7 @@
             this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic);
             this.label9.Location = new System.Drawing.Point(281, 290);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(75, 21);
+            this.label9.Size = new System.Drawing.Size(96, 28);
             this.label9.TabIndex = 3;
             this.label9.Text = "Số CCCD:";
             // 
@@ -614,7 +624,7 @@
             this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic);
             this.label8.Location = new System.Drawing.Point(281, 240);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(145, 21);
+            this.label8.Size = new System.Drawing.Size(182, 28);
             this.label8.TabIndex = 2;
             this.label8.Text = "Họ tên khách hàng:";
             // 
@@ -624,7 +634,7 @@
             this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic);
             this.label7.Location = new System.Drawing.Point(281, 190);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(128, 21);
+            this.label7.Size = new System.Drawing.Size(160, 28);
             this.label7.TabIndex = 1;
             this.label7.Text = "Loại khách hàng:";
             // 
@@ -634,7 +644,7 @@
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic);
             this.label6.Location = new System.Drawing.Point(281, 140);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(121, 21);
+            this.label6.Size = new System.Drawing.Size(151, 28);
             this.label6.TabIndex = 0;
             this.label6.Text = "Mã khách hàng:";
             // 

@@ -28,35 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.btn_TimKiem_Laptop = new Guna.UI2.WinForms.Guna2Button();
-            this.btn_Add_NhaCungCap = new Guna.UI2.WinForms.Guna2Button();
+            this.btn_Add_PNK = new Guna.UI2.WinForms.Guna2Button();
             this.dgv_PhieuNhapKho = new Guna.UI2.WinForms.Guna2DataGridView();
             this.MaNK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaNCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayNhapKho = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PTTT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TrangThaiThanhToan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.guna2DateTimePicker2 = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.btn_close = new Guna.UI2.WinForms.Guna2Button();
+            this.dtp_ngaynhapkho = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label19 = new System.Windows.Forms.Label();
             this.btn_Sua_PNK = new Guna.UI2.WinForms.Guna2Button();
             this.btn_Xoa_PNK = new Guna.UI2.WinForms.Guna2Button();
             this.btn_Them_PNK = new Guna.UI2.WinForms.Guna2Button();
-            this.txt_TrangThaiThanhToan = new Guna.UI2.WinForms.Guna2TextBox();
             this.txt_PTTT = new Guna.UI2.WinForms.Guna2TextBox();
             this.txt_ThanhTien = new Guna.UI2.WinForms.Guna2TextBox();
             this.txt_MaNCC = new Guna.UI2.WinForms.Guna2TextBox();
             this.txt_MaNK = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -86,12 +84,12 @@
             this.tabPage1.Controls.Add(this.guna2DateTimePicker1);
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.btn_TimKiem_Laptop);
-            this.tabPage1.Controls.Add(this.btn_Add_NhaCungCap);
+            this.tabPage1.Controls.Add(this.btn_Add_PNK);
             this.tabPage1.Controls.Add(this.dgv_PhieuNhapKho);
             this.tabPage1.Location = new System.Drawing.Point(4, 4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1264, 834);
+            this.tabPage1.Size = new System.Drawing.Size(1264, 831);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Information";
             // 
@@ -101,16 +99,17 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(890, 71);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(142, 15);
+            this.label1.Size = new System.Drawing.Size(166, 18);
             this.label1.TabIndex = 42;
             this.label1.Text = "Nhập ngày nhập kho:";
             // 
             // guna2DateTimePicker1
             // 
             this.guna2DateTimePicker1.Checked = true;
+            this.guna2DateTimePicker1.CustomFormat = "dd/MM/yyyy";
             this.guna2DateTimePicker1.FillColor = System.Drawing.Color.White;
             this.guna2DateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.guna2DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.guna2DateTimePicker1.Location = new System.Drawing.Point(893, 92);
             this.guna2DateTimePicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.guna2DateTimePicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
@@ -126,9 +125,9 @@
             this.label4.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.label4.Location = new System.Drawing.Point(490, 3);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(186, 30);
+            this.label4.Size = new System.Drawing.Size(223, 38);
             this.label4.TabIndex = 40;
-            this.label4.Text = "Phiếu nhập khho";
+            this.label4.Text = "Phiếu nhập kho";
             // 
             // btn_TimKiem_Laptop
             // 
@@ -148,23 +147,24 @@
             this.btn_TimKiem_Laptop.TabIndex = 20;
             this.btn_TimKiem_Laptop.Text = "Tìm";
             // 
-            // btn_Add_NhaCungCap
+            // btn_Add_PNK
             // 
-            this.btn_Add_NhaCungCap.BackColor = System.Drawing.Color.Transparent;
-            this.btn_Add_NhaCungCap.BorderColor = System.Drawing.Color.IndianRed;
-            this.btn_Add_NhaCungCap.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn_Add_NhaCungCap.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn_Add_NhaCungCap.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_Add_NhaCungCap.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_Add_NhaCungCap.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(81)))), ((int)(((byte)(68)))));
-            this.btn_Add_NhaCungCap.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Add_NhaCungCap.ForeColor = System.Drawing.Color.White;
-            this.btn_Add_NhaCungCap.Location = new System.Drawing.Point(8, 76);
-            this.btn_Add_NhaCungCap.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_Add_NhaCungCap.Name = "btn_Add_NhaCungCap";
-            this.btn_Add_NhaCungCap.Size = new System.Drawing.Size(240, 52);
-            this.btn_Add_NhaCungCap.TabIndex = 18;
-            this.btn_Add_NhaCungCap.Text = "+ Thêm phiếu nhập kho";
+            this.btn_Add_PNK.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Add_PNK.BorderColor = System.Drawing.Color.IndianRed;
+            this.btn_Add_PNK.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Add_PNK.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Add_PNK.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_Add_PNK.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_Add_PNK.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(81)))), ((int)(((byte)(68)))));
+            this.btn_Add_PNK.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Add_PNK.ForeColor = System.Drawing.Color.White;
+            this.btn_Add_PNK.Location = new System.Drawing.Point(8, 76);
+            this.btn_Add_PNK.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Add_PNK.Name = "btn_Add_PNK";
+            this.btn_Add_PNK.Size = new System.Drawing.Size(240, 52);
+            this.btn_Add_PNK.TabIndex = 18;
+            this.btn_Add_PNK.Text = "+ Thêm phiếu nhập kho";
+            this.btn_Add_PNK.Click += new System.EventHandler(this.btn_Add_PNK_Click);
             // 
             // dgv_PhieuNhapKho
             // 
@@ -172,18 +172,18 @@
             this.dgv_PhieuNhapKho.AllowUserToDeleteRows = false;
             this.dgv_PhieuNhapKho.AllowUserToResizeColumns = false;
             this.dgv_PhieuNhapKho.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgv_PhieuNhapKho.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dgv_PhieuNhapKho.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_PhieuNhapKho.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgv_PhieuNhapKho.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(81)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_PhieuNhapKho.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(81)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_PhieuNhapKho.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgv_PhieuNhapKho.ColumnHeadersHeight = 80;
             this.dgv_PhieuNhapKho.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgv_PhieuNhapKho.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -191,16 +191,15 @@
             this.MaNCC,
             this.NgayNhapKho,
             this.ThanhTien,
-            this.PTTT,
-            this.TrangThaiThanhToan});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_PhieuNhapKho.DefaultCellStyle = dataGridViewCellStyle3;
+            this.PTTT});
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_PhieuNhapKho.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgv_PhieuNhapKho.Location = new System.Drawing.Point(16, 202);
             this.dgv_PhieuNhapKho.Name = "dgv_PhieuNhapKho";
             this.dgv_PhieuNhapKho.RowHeadersVisible = false;
@@ -238,6 +237,7 @@
             // 
             // MaNK
             // 
+            this.MaNK.FillWeight = 80F;
             this.MaNK.HeaderText = "Mã nhập kho";
             this.MaNK.MinimumWidth = 8;
             this.MaNK.Name = "MaNK";
@@ -266,26 +266,19 @@
             this.PTTT.MinimumWidth = 6;
             this.PTTT.Name = "PTTT";
             // 
-            // TrangThaiThanhToan
-            // 
-            this.TrangThaiThanhToan.HeaderText = "Trạng thái thanh toán";
-            this.TrangThaiThanhToan.MinimumWidth = 6;
-            this.TrangThaiThanhToan.Name = "TrangThaiThanhToan";
-            // 
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.White;
-            this.tabPage2.Controls.Add(this.guna2DateTimePicker2);
+            this.tabPage2.Controls.Add(this.btn_close);
+            this.tabPage2.Controls.Add(this.dtp_ngaynhapkho);
             this.tabPage2.Controls.Add(this.label19);
             this.tabPage2.Controls.Add(this.btn_Sua_PNK);
             this.tabPage2.Controls.Add(this.btn_Xoa_PNK);
             this.tabPage2.Controls.Add(this.btn_Them_PNK);
-            this.tabPage2.Controls.Add(this.txt_TrangThaiThanhToan);
             this.tabPage2.Controls.Add(this.txt_PTTT);
             this.tabPage2.Controls.Add(this.txt_ThanhTien);
             this.tabPage2.Controls.Add(this.txt_MaNCC);
             this.tabPage2.Controls.Add(this.txt_MaNK);
-            this.tabPage2.Controls.Add(this.label11);
             this.tabPage2.Controls.Add(this.label10);
             this.tabPage2.Controls.Add(this.label9);
             this.tabPage2.Controls.Add(this.label8);
@@ -294,23 +287,40 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1264, 834);
+            this.tabPage2.Size = new System.Drawing.Size(1264, 831);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Options";
             // 
-            // guna2DateTimePicker2
+            // btn_close
             // 
-            this.guna2DateTimePicker2.Checked = true;
-            this.guna2DateTimePicker2.FillColor = System.Drawing.Color.White;
-            this.guna2DateTimePicker2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.guna2DateTimePicker2.Location = new System.Drawing.Point(536, 227);
-            this.guna2DateTimePicker2.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.guna2DateTimePicker2.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.guna2DateTimePicker2.Name = "guna2DateTimePicker2";
-            this.guna2DateTimePicker2.Size = new System.Drawing.Size(459, 42);
-            this.guna2DateTimePicker2.TabIndex = 28;
-            this.guna2DateTimePicker2.Value = new System.DateTime(2024, 10, 19, 13, 51, 4, 656);
+            this.btn_close.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_close.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_close.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_close.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_close.FillColor = System.Drawing.Color.Red;
+            this.btn_close.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btn_close.ForeColor = System.Drawing.Color.White;
+            this.btn_close.Location = new System.Drawing.Point(1200, 6);
+            this.btn_close.Name = "btn_close";
+            this.btn_close.Size = new System.Drawing.Size(58, 25);
+            this.btn_close.TabIndex = 29;
+            this.btn_close.Text = "X";
+            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
+            // 
+            // dtp_ngaynhapkho
+            // 
+            this.dtp_ngaynhapkho.Checked = true;
+            this.dtp_ngaynhapkho.CustomFormat = "dd/MM/yyyy";
+            this.dtp_ngaynhapkho.FillColor = System.Drawing.Color.White;
+            this.dtp_ngaynhapkho.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtp_ngaynhapkho.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_ngaynhapkho.Location = new System.Drawing.Point(536, 227);
+            this.dtp_ngaynhapkho.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtp_ngaynhapkho.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtp_ngaynhapkho.Name = "dtp_ngaynhapkho";
+            this.dtp_ngaynhapkho.Size = new System.Drawing.Size(459, 42);
+            this.dtp_ngaynhapkho.TabIndex = 28;
+            this.dtp_ngaynhapkho.Value = new System.DateTime(2024, 10, 19, 13, 51, 4, 656);
             // 
             // label19
             // 
@@ -319,7 +329,7 @@
             this.label19.ForeColor = System.Drawing.SystemColors.Highlight;
             this.label19.Location = new System.Drawing.Point(431, 37);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(396, 25);
+            this.label19.Size = new System.Drawing.Size(499, 32);
             this.label19.TabIndex = 27;
             this.label19.Text = "TÙY CHỈNH THÔNG TIN PHIẾU NHẬP KHO";
             // 
@@ -332,11 +342,12 @@
             this.btn_Sua_PNK.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(81)))), ((int)(((byte)(68)))));
             this.btn_Sua_PNK.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btn_Sua_PNK.ForeColor = System.Drawing.Color.White;
-            this.btn_Sua_PNK.Location = new System.Drawing.Point(868, 490);
+            this.btn_Sua_PNK.Location = new System.Drawing.Point(851, 475);
             this.btn_Sua_PNK.Name = "btn_Sua_PNK";
             this.btn_Sua_PNK.Size = new System.Drawing.Size(180, 45);
             this.btn_Sua_PNK.TabIndex = 26;
             this.btn_Sua_PNK.Text = "Sửa";
+            this.btn_Sua_PNK.Click += new System.EventHandler(this.btn_Sua_PNK_Click);
             // 
             // btn_Xoa_PNK
             // 
@@ -347,11 +358,12 @@
             this.btn_Xoa_PNK.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(81)))), ((int)(((byte)(68)))));
             this.btn_Xoa_PNK.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btn_Xoa_PNK.ForeColor = System.Drawing.Color.White;
-            this.btn_Xoa_PNK.Location = new System.Drawing.Point(569, 490);
+            this.btn_Xoa_PNK.Location = new System.Drawing.Point(347, 475);
             this.btn_Xoa_PNK.Name = "btn_Xoa_PNK";
             this.btn_Xoa_PNK.Size = new System.Drawing.Size(180, 45);
             this.btn_Xoa_PNK.TabIndex = 26;
             this.btn_Xoa_PNK.Text = "Xóa";
+            this.btn_Xoa_PNK.Click += new System.EventHandler(this.btn_Xoa_PNK_Click);
             // 
             // btn_Them_PNK
             // 
@@ -362,31 +374,12 @@
             this.btn_Them_PNK.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(81)))), ((int)(((byte)(68)))));
             this.btn_Them_PNK.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btn_Them_PNK.ForeColor = System.Drawing.Color.White;
-            this.btn_Them_PNK.Location = new System.Drawing.Point(268, 490);
+            this.btn_Them_PNK.Location = new System.Drawing.Point(578, 568);
             this.btn_Them_PNK.Name = "btn_Them_PNK";
             this.btn_Them_PNK.Size = new System.Drawing.Size(180, 45);
             this.btn_Them_PNK.TabIndex = 26;
             this.btn_Them_PNK.Text = "Thêm";
-            // 
-            // txt_TrangThaiThanhToan
-            // 
-            this.txt_TrangThaiThanhToan.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txt_TrangThaiThanhToan.DefaultText = "";
-            this.txt_TrangThaiThanhToan.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txt_TrangThaiThanhToan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txt_TrangThaiThanhToan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txt_TrangThaiThanhToan.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txt_TrangThaiThanhToan.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_TrangThaiThanhToan.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txt_TrangThaiThanhToan.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_TrangThaiThanhToan.Location = new System.Drawing.Point(536, 376);
-            this.txt_TrangThaiThanhToan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txt_TrangThaiThanhToan.Name = "txt_TrangThaiThanhToan";
-            this.txt_TrangThaiThanhToan.PasswordChar = '\0';
-            this.txt_TrangThaiThanhToan.PlaceholderText = "";
-            this.txt_TrangThaiThanhToan.SelectedText = "";
-            this.txt_TrangThaiThanhToan.Size = new System.Drawing.Size(459, 42);
-            this.txt_TrangThaiThanhToan.TabIndex = 18;
+            this.btn_Them_PNK.Click += new System.EventHandler(this.btn_Them_PNK_Click);
             // 
             // txt_PTTT
             // 
@@ -468,23 +461,13 @@
             this.txt_MaNK.Size = new System.Drawing.Size(459, 42);
             this.txt_MaNK.TabIndex = 13;
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic);
-            this.label11.Location = new System.Drawing.Point(281, 390);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(163, 21);
-            this.label11.TabIndex = 5;
-            this.label11.Text = "Trạng thái thanh toán";
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic);
             this.label10.Location = new System.Drawing.Point(281, 340);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(179, 21);
+            this.label10.Size = new System.Drawing.Size(225, 28);
             this.label10.TabIndex = 4;
             this.label10.Text = "Phương thức thanh toán";
             // 
@@ -494,7 +477,7 @@
             this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic);
             this.label9.Location = new System.Drawing.Point(281, 290);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(84, 21);
+            this.label9.Size = new System.Drawing.Size(105, 28);
             this.label9.TabIndex = 3;
             this.label9.Text = "Thành tiền";
             // 
@@ -504,7 +487,7 @@
             this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic);
             this.label8.Location = new System.Drawing.Point(281, 240);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(118, 21);
+            this.label8.Size = new System.Drawing.Size(147, 28);
             this.label8.TabIndex = 2;
             this.label8.Text = "Ngày nhập kho";
             // 
@@ -514,7 +497,7 @@
             this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic);
             this.label7.Location = new System.Drawing.Point(281, 190);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(130, 21);
+            this.label7.Size = new System.Drawing.Size(163, 28);
             this.label7.TabIndex = 1;
             this.label7.Text = "Mã nhà cung cấp";
             // 
@@ -524,7 +507,7 @@
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic);
             this.label6.Location = new System.Drawing.Point(281, 140);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(102, 21);
+            this.label6.Size = new System.Drawing.Size(127, 28);
             this.label6.TabIndex = 0;
             this.label6.Text = "Mã nhập kho";
             // 
@@ -534,6 +517,7 @@
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_PhieuNhapKho";
+            this.Text = "8";
             this.Load += new System.EventHandler(this.Form_PhieuNhapKho_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -553,14 +537,12 @@
         private System.Windows.Forms.TabPage tabPage2;
         private Guna.UI2.WinForms.Guna2DataGridView dgv_PhieuNhapKho;
         private Guna.UI2.WinForms.Guna2Button btn_TimKiem_Laptop;
-        private Guna.UI2.WinForms.Guna2Button btn_Add_NhaCungCap;
-        private System.Windows.Forms.Label label11;
+        private Guna.UI2.WinForms.Guna2Button btn_Add_PNK;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private Guna.UI2.WinForms.Guna2TextBox txt_TrangThaiThanhToan;
         private Guna.UI2.WinForms.Guna2TextBox txt_PTTT;
         private Guna.UI2.WinForms.Guna2TextBox txt_ThanhTien;
         private Guna.UI2.WinForms.Guna2TextBox txt_MaNCC;
@@ -572,12 +554,12 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtp_ngaynhapkho;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaNK;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaNCC;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayNhapKho;
         private System.Windows.Forms.DataGridViewTextBoxColumn ThanhTien;
         private System.Windows.Forms.DataGridViewTextBoxColumn PTTT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TrangThaiThanhToan;
-        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker2;
+        private Guna.UI2.WinForms.Guna2Button btn_close;
     }
 }

@@ -21,9 +21,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btn_Add_TraGop = new Guna.UI2.WinForms.Guna2Button();
@@ -32,9 +32,17 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btn_TimKiem_TraGop = new Guna.UI2.WinForms.Guna2Button();
             this.dgv_TraGop = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.MaHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HoTenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LaiSuatHangThang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TienTraTruoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TienConLai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.thoiGianTraGop = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayBatDau = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayDaoHan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.guna2DateTimePicker2 = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.dtp_NgayDaoHan = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.dtp_NgayBatDau = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label19 = new System.Windows.Forms.Label();
             this.btn_Sua_TraGop = new Guna.UI2.WinForms.Guna2Button();
             this.btn_Xoa_TraGop = new Guna.UI2.WinForms.Guna2Button();
@@ -49,15 +57,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.MaHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HoTenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LaiSuatHangThang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TienTraTruoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TienConLai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.thoiGianTraGop = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayBatDau = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayDaoHan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_close = new Guna.UI2.WinForms.Guna2Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_TraGop)).BeginInit();
@@ -90,7 +90,6 @@
             this.tabPage1.Size = new System.Drawing.Size(1264, 831);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Information";
-            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // btn_Add_TraGop
             // 
@@ -109,6 +108,7 @@
             this.btn_Add_TraGop.Size = new System.Drawing.Size(240, 52);
             this.btn_Add_TraGop.TabIndex = 47;
             this.btn_Add_TraGop.Text = "+ Thêm trả góp";
+            this.btn_Add_TraGop.Click += new System.EventHandler(this.btn_Add_TraGop_Click);
             // 
             // txt_search_MHD
             // 
@@ -176,18 +176,18 @@
             this.dgv_TraGop.AllowUserToDeleteRows = false;
             this.dgv_TraGop.AllowUserToResizeColumns = false;
             this.dgv_TraGop.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgv_TraGop.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
+            this.dgv_TraGop.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
             this.dgv_TraGop.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgv_TraGop.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(81)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_TraGop.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(81)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_TraGop.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.dgv_TraGop.ColumnHeadersHeight = 80;
             this.dgv_TraGop.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgv_TraGop.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -199,14 +199,14 @@
             this.thoiGianTraGop,
             this.NgayBatDau,
             this.NgayDaoHan});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_TraGop.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_TraGop.DefaultCellStyle = dataGridViewCellStyle15;
             this.dgv_TraGop.Location = new System.Drawing.Point(8, 189);
             this.dgv_TraGop.Name = "dgv_TraGop";
             this.dgv_TraGop.RowHeadersVisible = false;
@@ -242,12 +242,60 @@
             this.dgv_TraGop.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgv_TraGop.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_TraGop_CellContentClick);
             // 
+            // MaHD
+            // 
+            this.MaHD.HeaderText = "Mã hóa đơn";
+            this.MaHD.MinimumWidth = 8;
+            this.MaHD.Name = "MaHD";
+            // 
+            // HoTenKH
+            // 
+            this.HoTenKH.HeaderText = "Tên Khách hàng";
+            this.HoTenKH.MinimumWidth = 6;
+            this.HoTenKH.Name = "HoTenKH";
+            // 
+            // LaiSuatHangThang
+            // 
+            this.LaiSuatHangThang.HeaderText = "Lãi suất hàng tháng(%)";
+            this.LaiSuatHangThang.MinimumWidth = 6;
+            this.LaiSuatHangThang.Name = "LaiSuatHangThang";
+            // 
+            // TienTraTruoc
+            // 
+            this.TienTraTruoc.HeaderText = "Tiền trả trước";
+            this.TienTraTruoc.MinimumWidth = 6;
+            this.TienTraTruoc.Name = "TienTraTruoc";
+            // 
+            // TienConLai
+            // 
+            this.TienConLai.HeaderText = "Tiền còn lại";
+            this.TienConLai.MinimumWidth = 6;
+            this.TienConLai.Name = "TienConLai";
+            // 
+            // thoiGianTraGop
+            // 
+            this.thoiGianTraGop.HeaderText = "Thời Gian Trả Góp (tháng)";
+            this.thoiGianTraGop.MinimumWidth = 6;
+            this.thoiGianTraGop.Name = "thoiGianTraGop";
+            // 
+            // NgayBatDau
+            // 
+            this.NgayBatDau.HeaderText = "Ngày Bắt Đầu";
+            this.NgayBatDau.MinimumWidth = 6;
+            this.NgayBatDau.Name = "NgayBatDau";
+            // 
+            // NgayDaoHan
+            // 
+            this.NgayDaoHan.HeaderText = "Ngày Đáo Hạn";
+            this.NgayDaoHan.MinimumWidth = 6;
+            this.NgayDaoHan.Name = "NgayDaoHan";
+            // 
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.White;
-            this.tabPage2.Controls.Add(this.label3);
-            this.tabPage2.Controls.Add(this.guna2DateTimePicker2);
-            this.tabPage2.Controls.Add(this.guna2DateTimePicker1);
+            this.tabPage2.Controls.Add(this.btn_close);
+            this.tabPage2.Controls.Add(this.dtp_NgayDaoHan);
+            this.tabPage2.Controls.Add(this.dtp_NgayBatDau);
             this.tabPage2.Controls.Add(this.label19);
             this.tabPage2.Controls.Add(this.btn_Sua_TraGop);
             this.tabPage2.Controls.Add(this.btn_Xoa_TraGop);
@@ -268,42 +316,43 @@
             this.tabPage2.Size = new System.Drawing.Size(1264, 831);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Options";
-            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
-            // guna2DateTimePicker2
+            // dtp_NgayDaoHan
             // 
-            this.guna2DateTimePicker2.Checked = true;
-            this.guna2DateTimePicker2.FillColor = System.Drawing.Color.White;
-            this.guna2DateTimePicker2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.guna2DateTimePicker2.Location = new System.Drawing.Point(467, 382);
-            this.guna2DateTimePicker2.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.guna2DateTimePicker2.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.guna2DateTimePicker2.Name = "guna2DateTimePicker2";
-            this.guna2DateTimePicker2.Size = new System.Drawing.Size(459, 42);
-            this.guna2DateTimePicker2.TabIndex = 28;
-            this.guna2DateTimePicker2.Value = new System.DateTime(2024, 10, 19, 19, 40, 55, 300);
+            this.dtp_NgayDaoHan.Checked = true;
+            this.dtp_NgayDaoHan.CustomFormat = "dd/MM/yyyy";
+            this.dtp_NgayDaoHan.FillColor = System.Drawing.Color.White;
+            this.dtp_NgayDaoHan.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtp_NgayDaoHan.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_NgayDaoHan.Location = new System.Drawing.Point(467, 382);
+            this.dtp_NgayDaoHan.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtp_NgayDaoHan.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtp_NgayDaoHan.Name = "dtp_NgayDaoHan";
+            this.dtp_NgayDaoHan.Size = new System.Drawing.Size(459, 42);
+            this.dtp_NgayDaoHan.TabIndex = 28;
+            this.dtp_NgayDaoHan.Value = new System.DateTime(2024, 10, 19, 19, 40, 55, 300);
             // 
-            // guna2DateTimePicker1
+            // dtp_NgayBatDau
             // 
-            this.guna2DateTimePicker1.Checked = true;
-            this.guna2DateTimePicker1.FillColor = System.Drawing.Color.White;
-            this.guna2DateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.guna2DateTimePicker1.Location = new System.Drawing.Point(467, 334);
-            this.guna2DateTimePicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.guna2DateTimePicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.guna2DateTimePicker1.Name = "guna2DateTimePicker1";
-            this.guna2DateTimePicker1.Size = new System.Drawing.Size(459, 42);
-            this.guna2DateTimePicker1.TabIndex = 28;
-            this.guna2DateTimePicker1.Value = new System.DateTime(2024, 10, 19, 19, 40, 55, 300);
+            this.dtp_NgayBatDau.Checked = true;
+            this.dtp_NgayBatDau.CustomFormat = "dd/MM/yyyy";
+            this.dtp_NgayBatDau.FillColor = System.Drawing.Color.White;
+            this.dtp_NgayBatDau.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtp_NgayBatDau.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_NgayBatDau.Location = new System.Drawing.Point(467, 334);
+            this.dtp_NgayBatDau.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtp_NgayBatDau.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtp_NgayBatDau.Name = "dtp_NgayBatDau";
+            this.dtp_NgayBatDau.Size = new System.Drawing.Size(459, 42);
+            this.dtp_NgayBatDau.TabIndex = 28;
+            this.dtp_NgayBatDau.Value = new System.DateTime(2024, 10, 19, 19, 40, 55, 300);
             // 
             // label19
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
             this.label19.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label19.Location = new System.Drawing.Point(574, 49);
+            this.label19.Location = new System.Drawing.Point(533, 49);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(256, 32);
             this.label19.TabIndex = 27;
@@ -334,7 +383,7 @@
             this.btn_Xoa_TraGop.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(81)))), ((int)(((byte)(68)))));
             this.btn_Xoa_TraGop.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btn_Xoa_TraGop.ForeColor = System.Drawing.Color.White;
-            this.btn_Xoa_TraGop.Location = new System.Drawing.Point(580, 510);
+            this.btn_Xoa_TraGop.Location = new System.Drawing.Point(331, 510);
             this.btn_Xoa_TraGop.Name = "btn_Xoa_TraGop";
             this.btn_Xoa_TraGop.Size = new System.Drawing.Size(180, 45);
             this.btn_Xoa_TraGop.TabIndex = 26;
@@ -350,7 +399,7 @@
             this.btn_Them_TraGop.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(81)))), ((int)(((byte)(68)))));
             this.btn_Them_TraGop.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btn_Them_TraGop.ForeColor = System.Drawing.Color.White;
-            this.btn_Them_TraGop.Location = new System.Drawing.Point(274, 510);
+            this.btn_Them_TraGop.Location = new System.Drawing.Point(593, 510);
             this.btn_Them_TraGop.Name = "btn_Them_TraGop";
             this.btn_Them_TraGop.Size = new System.Drawing.Size(180, 45);
             this.btn_Them_TraGop.TabIndex = 26;
@@ -497,63 +546,21 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "Mã hóa đơn";
             // 
-            // label3
+            // btn_close
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic);
-            this.label3.Location = new System.Drawing.Point(576, 401);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(113, 28);
-            this.label3.TabIndex = 29;
-            this.label3.Text = "Tiền còn lại";
-            // 
-            // MaHD
-            // 
-            this.MaHD.HeaderText = "Mã hóa đơn";
-            this.MaHD.MinimumWidth = 8;
-            this.MaHD.Name = "MaHD";
-            // 
-            // HoTenKH
-            // 
-            this.HoTenKH.HeaderText = "Tên Khách hàng";
-            this.HoTenKH.MinimumWidth = 6;
-            this.HoTenKH.Name = "HoTenKH";
-            // 
-            // LaiSuatHangThang
-            // 
-            this.LaiSuatHangThang.HeaderText = "Lãi suất hàng tháng(%)";
-            this.LaiSuatHangThang.MinimumWidth = 6;
-            this.LaiSuatHangThang.Name = "LaiSuatHangThang";
-            // 
-            // TienTraTruoc
-            // 
-            this.TienTraTruoc.HeaderText = "Tiền trả trước";
-            this.TienTraTruoc.MinimumWidth = 6;
-            this.TienTraTruoc.Name = "TienTraTruoc";
-            // 
-            // TienConLai
-            // 
-            this.TienConLai.HeaderText = "Tiền còn lại";
-            this.TienConLai.MinimumWidth = 6;
-            this.TienConLai.Name = "TienConLai";
-            // 
-            // thoiGianTraGop
-            // 
-            this.thoiGianTraGop.HeaderText = "Thời Gian Trả Góp (tháng)";
-            this.thoiGianTraGop.MinimumWidth = 6;
-            this.thoiGianTraGop.Name = "thoiGianTraGop";
-            // 
-            // NgayBatDau
-            // 
-            this.NgayBatDau.HeaderText = "Ngày Bắt Đầu";
-            this.NgayBatDau.MinimumWidth = 6;
-            this.NgayBatDau.Name = "NgayBatDau";
-            // 
-            // NgayDaoHan
-            // 
-            this.NgayDaoHan.HeaderText = "Ngày Đáo Hạn";
-            this.NgayDaoHan.MinimumWidth = 6;
-            this.NgayDaoHan.Name = "NgayDaoHan";
+            this.btn_close.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_close.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_close.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_close.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_close.FillColor = System.Drawing.Color.Red;
+            this.btn_close.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btn_close.ForeColor = System.Drawing.Color.White;
+            this.btn_close.Location = new System.Drawing.Point(1200, 5);
+            this.btn_close.Name = "btn_close";
+            this.btn_close.Size = new System.Drawing.Size(58, 25);
+            this.btn_close.TabIndex = 30;
+            this.btn_close.Text = "X";
+            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
             // 
             // Form_TraGop
             // 
@@ -598,9 +605,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2Button btn_Add_TraGop;
-        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
-        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker2;
-        private System.Windows.Forms.Label label3;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtp_NgayBatDau;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtp_NgayDaoHan;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaHD;
         private System.Windows.Forms.DataGridViewTextBoxColumn HoTenKH;
         private System.Windows.Forms.DataGridViewTextBoxColumn LaiSuatHangThang;
@@ -609,5 +615,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn thoiGianTraGop;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayBatDau;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayDaoHan;
+        private Guna.UI2.WinForms.Guna2Button btn_close;
     }
 }
